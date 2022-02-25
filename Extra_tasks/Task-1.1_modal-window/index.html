@@ -28,6 +28,7 @@
       </footer>
     </div>
     <div id="modal" class="modal">
+      <a href="#" class="modal__box"></a>
       <div class="modal__body">
         <div class="modal__content">
           <a href="#" class="modal__close">&times;</a>
@@ -38,11 +39,34 @@
             ac consectetur ac, vestibulum at eros.
           </div>
           <div class="modal__buttons">
-            <button class="btn__close">Close</button>
-            <button class="btn__save">Save changes</button>
+            <form action="#">
+              <button class="btn__close">Close</button>
+              <button class="btn__save">Save changes</button>
+            </form>        
           </div>
         </div>
       </div>
     </div>
+    <div id="modal-start" class="modal-start">
+      <a href="#" class="modal__box" onclick="document.getElementById('modal-start').style.display='none';"></a>
+      <div class="modal__body">
+        <div class="modal__content-start">
+          <a href="#" class="modal__close" onclick="document.getElementById('modal-start').style.display='none';">&times;</a>
+          <h1 class="modal__title">Modal title</h1>
+          <div class="modal__text">
+            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
+            ac consectetur ac, vestibulum at eros.
+          </div>
+          <div class="modal__buttons">
+            <form action="#">
+              <button class="btn__close" onclick="document.getElementById('modal-start').style.display='none';">Close</button>
+              <button class="btn__save" onclick="document.getElementById('modal-start').style.display='none';">Save changes</button>
+            </form>        
+          </div>
+        </div>
+      </div>
+    </div>
+    
   </body>
 </html>
