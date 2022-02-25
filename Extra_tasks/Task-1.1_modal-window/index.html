@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Modal Window</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1>Modal Window</h1>
+        <form class="header__open" action="#modal">
+          <button class="header__btn">Open Modal Window</button>
+        </form>
+      </header>
+      <main class="main"></main>
+      <footer class="footer">
+        <div class="footer__link">
+          <img src="assets/github.svg" alt="GitHub" />
+          <a href="https://github.com/Alexej-Ilyutik" target="_blank">
+            Alexej Ilyutik
+          </a>
+        </div>
+        <p>2022</p>
+      </footer>
+    </div>
+    <div id="modal" class="modal">
+      <a href="#" class="modal__box"></a>
+      <div class="modal__body">
+        <div class="modal__content">
+          <a href="#" class="modal__close">&times;</a>
+          <h2 class="modal__title">Modal title</h2>
+          <div class="modal__text">
+            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
+            ac consectetur ac, vestibulum at eros.
+          </div>
+          <div class="modal__buttons">
+            <form action="#">
+              <button class="btn__close">Close</button>
+              <button class="btn__save">Save changes</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="modal-start" class="modal-start">
+      <a
+        href="#"
+        class="modal__box"
+        onclick="document.getElementById('modal-start').style.display='none';"
+      ></a>
+      <div class="modal__body">
+        <div class="modal__content-start">
+          <a
+            href="#"
+            class="modal__close"
+            onclick="document.getElementById('modal-start').style.display='none';"
+            >&times;</a
+          >
+          <h2 class="modal__title">Modal title</h2>
+          <div class="modal__text">
+            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
+            ac consectetur ac, vestibulum at eros.
+          </div>
+          <div class="modal__buttons">
+            <form action="#">
+              <button
+                class="btn__close"
+                onclick="document.getElementById('modal-start').style.display='none';"
+              >
+                Close
+              </button>
+              <button
+                class="btn__save"
+                onclick="document.getElementById('modal-start').style.display='none';"
+              >
+                Save changes
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
