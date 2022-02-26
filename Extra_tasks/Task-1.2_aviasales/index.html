@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Aviasales</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1>Aviasales</h1>
+      </header>
+      <main class="main">
+        <div class="main__container">
+          <div class="ticket">
+            <aside class="ticket__price price">
+              <div class="price__description first">Самый дешевый</div>
+              <h3 class="price__cost">1846 Br</h3>
+              <button class="price__btn">Выбрать билет</button>
+            </aside>
+            <div class="ticket__line"></div>
+            <article class="ticket__info">
+              <section class="ticket__header trip-info">
+                <div class="trip-info__operators">
+                  <ul>
+                    <li>
+                      <div class="trip-info__airline" data-tooltip="Азимут">
+                        <img
+                          src="assets/png/asimut.png"
+                          width="36"
+                          height="36"
+                          alt="asimut"
+                        />
+                      </div>
+                    </li>
+                    <li>
+                      <div class="trip-info__airline" data-tooltip="Аэрофлот">
+                        <img
+                          src="assets/png/aeroflot.png"
+                          width="36"
+                          height="36"
+                          alt="aeroflot"
+                        />
+                      </div>
+                    </li>
+                    <li>
+                      <div class="trip-info__airline" data-tooltip="Белавиа">
+                        <img
+                          src="assets/png/belavia.png"
+                          width="36"
+                          height="36"
+                          alt="belavia"
+                        />
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="trip-info__left">
+                  <div class="trip-info__airport">
+                    <ul>
+                      <li>
+                        <div
+                          class="trip-info__info"
+                          data-tooltip="Смена аэропорта"
+                        >
+                          <img
+                            src="assets/svg/change.svg"
+                            width="16"
+                            height="16"
+                            alt="change"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div
+                          class="trip-info__info"
+                          data-tooltip="Ночная пересадка"
+                        >
+                          <img
+                            src="assets/svg/moon.svg"
+                            width="16"
+                            height="16"
+                            alt="night"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div
+                          class="trip-info__info"
+                          data-tooltip="Долгая пересадка"
+                        >
+                          <img
+                            src="assets/svg/hourglass.svg"
+                            width="16"
+                            height="16"
+                            alt="time"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div
+                          class="trip-info__info"
+                          data-tooltip="Пересадка с самостоятельным получением и сдачей багажа"
+                        >
+                          <img
+                            src="assets/svg/luggage.svg"
+                            width="16"
+                            height="16"
+                            alt="time"
+                          />
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="trip-info__subscribe">
+                    <ul>
+                      <li>
+                        <div
+                          class="trip-info__bell"
+                          data-tooltip="Подписаться на уведомления об изменениях цены билета"
+                        >
+                          <img
+                            src="assets/svg/bell.svg"
+                            width="24"
+                            height="24"
+                            alt="bell"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div class="trip-info__exit">
+                          <img
+                            src="assets/svg/exit.svg"
+                            width="24"
+                            height="24"
+                            alt="exit"
+                          />
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+              <section class="ticket__direction trip-description">
+                <div class="trip-description__date date-info start">
+                  <h2 class="date-info__time">18:10</h2>
+                  <p class="date-info__city">Минск</p>
+                  <p class="date-info__date">7 мар 2022, пн</p>
+                </div>
+                <div class="trip-description__date travel-time">
+                  <div class="travel-time__trip-time">
+                    <p data-tooltip="Вылет из аэропорта 'Минск' (Минск)">
+                      <img
+                        class="travel-time__start"
+                        src="assets/svg/airplane.svg"
+                        alt="airplane"
+                      />
+                    </p>
+                    <p>В пути: 1д 7ч 10м</p>
+                    <p data-tooltip="Прилет в аэропорт 'Кеннеди' (Нью-Йорк)">
+                      <img
+                        class="travel-time__finish"
+                        src="assets/svg/airplane.svg"
+                        alt="airplane"
+                      />
+                    </p>
+                  </div>
+                  <div class="travel-time__graf">
+                    <div class="travel-time__way1 way1_1">
+                      <div
+                        class="way1__line"
+                        data-tooltip="В пути 1ч 35мин"
+                      ></div>
+                      <p
+                        class="way1__info"
+                        data-tooltip="Вылет из аэропорта 'Минск' (Минск)"
+                      >
+                        MSQ
+                      </p>
+                    </div>
+                    <div class="travel-time__transfer transfer1_1">
+                      <div
+                        class="transfer__line"
+                        data-tooltip="Пересадка 3ч 15мин"
+                      ></div>
+                      <p
+                        class="transfer__info"
+                        data-tooltip="Пересадка 3ч 15мин"
+                      >
+                        SVO
+                      </p>
+                    </div>
+                    <div class="travel-time__way2 way2_1">
+                      <div
+                        class="way2__line"
+                        data-tooltip="В пути 2ч 50мин"
+                      ></div>
+                      <p
+                        class="way2__info"
+                        data-tooltip="Прилет в аэропорт 'Кеннеди' (Нью-Йорк)"
+                      >
+                        JFK
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="trip-description__date date-info end">
+                  <h2 class="date-info__time">17:20</h2>
+                  <p class="date-info__city">Нью-Йорк</p>
+                  <p class="date-info__date">8 мар 2022, вт</p>
+                </div>
+              </section>
+              <div class="ticket__line-info"></div>
+              <section class="ticket__direction trip-description">
+                <div class="trip-description__date date-info">
+                  <h2 class="date-info__time">20:25</h2>
+                  <p class="date-info__city">Нью-Йорк</p>
+                  <p class="date-info__date">20 мар 2022, вс</p>
+                </div>
+                <div class="trip-description__date travel-time">
+                  <div class="travel-time__trip-time">
+                    <p data-tooltip="Вылет из аэропорта 'Кеннеди' (Нью-Йорк)">
+                      <img
+                        class="travel-time__start"
+                        src="assets/svg/airplane.svg"
+                        alt="airplane"
+                      />
+                    </p>
+                    <p>В пути: 18ч 10м</p>
+                    <p data-tooltip="Прилет в аэропорт 'Минск' (Минск)">
+                      <img
+                        class="travel-time__finish"
+                        src="assets/svg/airplane.svg"
+                        alt="airplane"
+                      />
+                    </p>
+                  </div>
+                  <div class="travel-time__graf">
+                    <div class="travel-time__way1 way1_2">
+                      <div
+                        class="way1__line"
+                        data-tooltip="В пути 5ч 50мин"
+                      ></div>
+                      <p
+                        class="way1__info"
+                        data-tooltip="Вылет из аэропорта 'Кеннеди' (Нью-Йорк)"
+                      >
+                        JFK
+                      </p>
+                    </div>
+                    <div class="travel-time__transfer transfer1_2">
+                      <div
+                        class="transfer__line"
+                        data-tooltip="Пересадка 3ч 50мин"
+                      ></div>
+                      <p
+                        class="transfer__info"
+                        data-tooltip="Пересадка 3ч 50мин"
+                      >
+                        SVO
+                      </p>
+                    </div>
+                    <div class="travel-time__way2 way2_2">
+                      <div
+                        class="way2__line"
+                        data-tooltip="В пути 3ч 10мин"
+                      ></div>
+                      <p
+                        class="way2__info"
+                        data-tooltip="Прилет в аэропорт 'Минск' (Минск)"
+                      >
+                        MSQ
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="trip-description__date date-info">
+                  <h2 class="date-info__time">21:35</h2>
+                  <p class="date-info__city">Минск</p>
+                  <p class="date-info__date">21 мар 2022, пн</p>
+                </div>
+              </section>
+            </article>
+          </div>
+
+          <!--    Second    Ticket         -->
+
+          <div class="ticket">
+            <aside class="ticket__price price">
+              <div class="price__description second">Самый быстрый</div>
+              <h3 class="price__cost">3934 Br</h3>
+              <button class="price__btn">Выбрать билет</button>
+              <p class="btn-description">Остался 1 билет по этой цене</p>
+            </aside>
+            <div class="ticket__line"></div>
+            <article class="ticket__info">
+              <section class="ticket__header trip-info">
+                <div class="trip-info__operators">
+                  <ul>
+                    <li>
+                      <div
+                        class="trip-info__airline"
+                        data-tooltip="Турецкие авиалинии"
+                      >
+                        <img
+                          src="assets/png/turkish_airlines.png"
+                          width="36"
+                          height="36"
+                          alt="asimut"
+                        />
+                      </div>
+                    </li>
+                    <li>
+                      <div class="trip-info__airline" data-tooltip="Аэрофлот">
+                        <img
+                          src="assets/png/aeroflot.png"
+                          width="36"
+                          height="36"
+                          alt="aeroflot"
+                        />
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="trip-info__left">
+                  <div class="trip-info__airport">
+                    <ul>
+                      <li>
+                        <div
+                          class="trip-info__info"
+                          data-tooltip="Ночная пересадка"
+                        >
+                          <img
+                            src="assets/svg/moon.svg"
+                            width="16"
+                            height="16"
+                            alt="night"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div
+                          class="trip-info__info"
+                          data-tooltip="Пересадка с самостоятельным получением и сдачей багажа"
+                        >
+                          <img
+                            src="assets/svg/luggage.svg"
+                            width="16"
+                            height="16"
+                            alt="time"
+                          />
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="trip-info__subscribe">
+                    <ul>
+                      <li>
+                        <div
+                          class="trip-info__bell"
+                          data-tooltip="Подписаться на уведомления об изменениях цены билета"
+                        >
+                          <img
+                            src="assets/svg/bell.svg"
+                            width="24"
+                            height="24"
+                            alt="bell"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div class="trip-info__exit">
+                          <img
+                            src="assets/svg/exit.svg"
+                            width="24"
+                            height="24"
+                            alt="exit"
+                          />
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+              <section class="ticket__direction trip-description">
+                <div class="trip-description__date date-info start">
+                  <h2 class="date-info__time">08:20</h2>
+                  <p class="date-info__city">Минск</p>
+                  <p class="date-info__date">7 мар 2022, пн</p>
+                </div>
+                <div class="trip-description__date travel-time">
+                  <div class="travel-time__trip-time">
+                    <p data-tooltip="Вылет из аэропорта 'Минск' (Минск)">
+                      <img
+                        class="travel-time__start"
+                        src="assets/svg/airplane.svg"
+                        alt="airplane"
+                      />
+                    </p>
+                    <p>В пути: 18ч 05м</p>
+                    <p data-tooltip="Прилет в аэропорт 'Кеннеди' (Нью-Йорк)">
+                      <img
+                        class="travel-time__finish"
+                        src="assets/svg/airplane.svg"
+                        alt="airplane"
+                      />
+                    </p>
+                  </div>
+                  <div class="travel-time__graf">
+                    <div class="travel-time__way1 way1_3">
+                      <div
+                        class="way1__line"
+                        data-tooltip="В пути 1ч 35мин"
+                      ></div>
+                      <p
+                        class="way1__info"
+                        data-tooltip="Вылет из аэропорта 'Минск' (Минск)"
+                      >
+                        MSQ
+                      </p>
+                    </div>
+                    <div class="travel-time__transfer transfer1_3">
+                      <div
+                        class="transfer__line"
+                        data-tooltip="Пересадка 3ч 15мин"
+                      ></div>
+                      <p
+                        class="transfer__info"
+                        data-tooltip="Пересадка 3ч 15мин"
+                      >
+                        IST
+                      </p>
+                    </div>
+                    <div class="travel-time__way2 way2_3">
+                      <div
+                        class="way2__line"
+                        data-tooltip="В пути 2ч 50мин"
+                      ></div>
+                      <p
+                        class="way2__info"
+                        data-tooltip="Прилет в аэропорт 'Кеннеди' (Нью-Йорк)"
+                      >
+                        JFK
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="trip-description__date date-info end">
+                  <h2 class="date-info__time">18:25</h2>
+                  <p class="date-info__city">Нью-Йорк</p>
+                  <p class="date-info__date">8 мар 2022, вт</p>
+                </div>
+              </section>
+              <div class="ticket__line-info"></div>
+              <section class="ticket__direction trip-description">
+                <div class="trip-description__date date-info">
+                  <h2 class="date-info__time">20:25</h2>
+                  <p class="date-info__city">Нью-Йорк</p>
+                  <p class="date-info__date">20 мар 2022, вс</p>
+                </div>
+                <div class="trip-description__date travel-time">
+                  <div class="travel-time__trip-time">
+                    <p data-tooltip="Вылет из аэропорта 'Кеннеди' (Нью-Йорк)">
+                      <img
+                        class="travel-time__start"
+                        src="assets/svg/airplane.svg"
+                        alt="airplane"
+                      />
+                    </p>
+                    <p>В пути: 18ч 10м</p>
+                    <p data-tooltip="Прилет в аэропорт 'Минск' (Минск)">
+                      <img
+                        class="travel-time__finish"
+                        src="assets/svg/airplane.svg"
+                        alt="airplane"
+                      />
+                    </p>
+                  </div>
+                  <div class="travel-time__graf">
+                    <div class="travel-time__way1 way1_4">
+                      <div
+                        class="way1__line"
+                        data-tooltip="В пути 5ч 50мин"
+                      ></div>
+                      <p
+                        class="way1__info"
+                        data-tooltip="Вылет из аэропорта 'Кеннеди' (Нью-Йорк)"
+                      >
+                        JFK
+                      </p>
+                    </div>
+                    <div class="travel-time__transfer transfer1_4">
+                      <div
+                        class="transfer__line"
+                        data-tooltip="Пересадка 3ч 50мин"
+                      ></div>
+                      <p
+                        class="transfer__info"
+                        data-tooltip="Пересадка 3ч 50мин"
+                      >
+                        SVO
+                      </p>
+                    </div>
+                    <div class="travel-time__way2 way2_4">
+                      <div
+                        class="way2__line"
+                        data-tooltip="В пути 3ч 10мин"
+                      ></div>
+                      <p
+                        class="way2__info"
+                        data-tooltip="Прилет в аэропорт 'Минск' (Минск)"
+                      >
+                        MSQ
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="trip-description__date date-info">
+                  <h2 class="date-info__time">16:35</h2>
+                  <p class="date-info__city">Минск</p>
+                  <p class="date-info__date">21 мар 2022, пн</p>
+                </div>
+              </section>
+            </article>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer__link">
+          <img src="assets/svg/github.svg" alt="GitHub" />
+          <a href="https://github.com/Alexej-Ilyutik" target="_blank">
+            Alexej Ilyutik
+          </a>
+        </div>
+        <p>2022</p>
+      </footer>
+    </div>
+  </body>
+</html>
