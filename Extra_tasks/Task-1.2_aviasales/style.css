@@ -63,6 +63,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   display: flex;
+  flex-wrap: wrap;
 }
 
 ul {
@@ -75,8 +76,13 @@ ul {
   padding: 30px 15px;
 }
 
+.ticket__info {
+  margin: 0 auto;
+}
+
 .ticket__price {
   position: relative;
+  margin: 0 auto;
 }
 
 .ticket__price h3 {
@@ -93,6 +99,7 @@ ul {
   padding: 5px 10px;
   top: -14px;
   border-radius: 15px;
+  width: 70%;
 }
 
 .first {
@@ -124,9 +131,16 @@ ul {
   display: flex;
 }
 
+.trip-info__left {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .ticket__direction {
   align-items: flex-end;
   gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .travel-time__trip-time {
@@ -138,6 +152,14 @@ ul {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.travel-time__graf {
+  min-width: 250px;
+  max-width: 300px;
+  width: 20vw;
 }
 
 .trip-info__operators ul,
@@ -221,52 +243,48 @@ ul {
   transform: rotate(60deg);
 }
 
-.way1__line1,
-.transfer__line1,
-.way2__line1,
-.way1__line2,
-.transfer__line2,
-.way2__line2 {
+.way1__line,
+.transfer__line,
+.way2__line {
   background-color: var(--gray-color);
+  width: 100%;
 }
 
-.way1__line1,
-.way2__line1,
-.way1__line2,
-.way2__line2 {
+.way1__line,
+.way2__line {
   border-radius: 3px;
   height: 6px;
   margin-bottom: 15px;
 }
 
-.way1__line1 {
-  width: 30px;
-}
-
-.transfer__line1 {
-  width: 200px;
+.transfer__line {
   height: 2px;
   margin-top: 2px;
   margin-bottom: 17px;
 }
 
-.way2__line1 {
-  width: 70px;
+.way1_1 {
+  width: 10%;
 }
 
-.way1__line2 {
-  width: 140px;
+.transfer1_1 {
+  width: 67%;
 }
 
-.transfer__line2 {
-  width: 100px;
-  height: 2px;
-  margin-top: 2px;
-  margin-bottom: 17px;
+.way2_1 {
+  width: 23%;
 }
 
-.way2__line2 {
-  width: 60px;
+.way1_2 {
+  width: 50%;
+}
+
+.transfer1_2 {
+  width: 35%;
+}
+
+.way2_2 {
+  width: 15%;
 }
 
 .way1__info,
