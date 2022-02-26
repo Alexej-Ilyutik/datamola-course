@@ -4,7 +4,9 @@
   --bg-color: rgba(0, 0, 0, 0.25);
   --main-color: rgb(45, 52, 71);
   --main-btn: rgb(250, 129, 48);
+  --main-btn-hov: rgb(252, 158, 95);
   --gray-color: rgb(184, 184, 184);
+  --blue: rgb(71, 134, 250);
 }
 
 * {
@@ -123,6 +125,10 @@ ul {
   color: var(--text-color);
 }
 
+.price__btn:hover {
+  background-color: var(--main-btn-hov);
+}
+
 .ticket__header,
 .ticket__direction,
 .travel-time__trip-time,
@@ -160,6 +166,7 @@ ul {
   min-width: 250px;
   max-width: 300px;
   width: 20vw;
+  gap: 1px;
 }
 
 .trip-info__operators ul,
@@ -208,6 +215,12 @@ ul {
   display: block;
 }
 
+.trip-info__bell img:hover,
+.trip-info__exit img:hover {
+  filter: invert(48%) sepia(75%) saturate(3048%) hue-rotate(203deg)
+    brightness(101%) contrast(96%);
+}
+
 .trip-description__date {
   display: flex;
   flex-direction: column;
@@ -239,6 +252,12 @@ ul {
   height: 18px;
 }
 
+.travel-time__start:hover,
+.travel-time__finish:hover {
+  filter: invert(57%) sepia(93%) saturate(1385%) hue-rotate(337deg)
+    brightness(99%) contrast(99%);
+}
+
 .travel-time__finish {
   transform: rotate(60deg);
 }
@@ -248,6 +267,13 @@ ul {
 .way2__line {
   background-color: var(--gray-color);
   width: 100%;
+}
+
+.way1__line:hover,
+.transfer__line:hover,
+.way2__line:hover {
+  background-color: var(--text-color);
+  border: 1px solid var(--main-btn);
 }
 
 .way1__line,
@@ -291,13 +317,19 @@ ul {
 .transfer__info,
 .way2__info {
   font-size: 12px;
-  text-transform: uppercase;
   font-weight: 700;
-  color: rgb(71, 134, 250);
+  color: var(--blue);
+}
+
+.way1__info:hover,
+.transfer__info:hover,
+.way2__info:hover {
+  color: var(--main-btn);
 }
 
 .way1__info {
-  text-align: left;
+  width: 22px;
+  margin-right: auto;
 }
 
 .transfer__info {
@@ -305,7 +337,8 @@ ul {
 }
 
 .way2__info {
-  text-align: right;
+  width: 25px;
+  margin-left: auto;
 }
 
 .ticket__line-info {
@@ -341,4 +374,51 @@ ul {
 .footer p,
 .footer__link a {
   color: var(--text-color);
+}
+
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::before,
+[data-tooltip]::after {
+  display: block;
+  position: absolute;
+  opacity: 0;
+  transition: 0.6s;
+  pointer-events: none;
+  left: 50%;
+}
+
+[data-tooltip]::before {
+  content: attr(data-tooltip);
+  background-color: #030303;
+  font-size: 12px;
+  margin-left: -60px;
+  width: 120px;
+  bottom: 0px;
+  color: var(--text-color);
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  text-align: center;
+}
+
+[data-tooltip]::after {
+  content: '';
+  border-top: 10px solid #030303;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  bottom: 0px;
+  margin-left: -10px;
+}
+
+[data-tooltip]:hover::before {
+  opacity: 1;
+  bottom: 50px;
+}
+
+[data-tooltip]:hover::after {
+  opacity: 1;
+  bottom: 40px;
 }

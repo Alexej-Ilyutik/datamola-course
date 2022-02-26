@@ -30,45 +30,122 @@
                 <div class="trip-info__operators">
                   <ul>
                     <li>
-                      <div class="trip-info__asimut"><img src="assets/png/asimut.png" width="36" height="36" alt="asimut"></div>
+                      <div class="trip-info__asimut" data-tooltip="Азимут">
+                        <img
+                          src="assets/png/asimut.png"
+                          width="36"
+                          height="36"
+                          alt="asimut"
+                        />
+                      </div>
                     </li>
                     <li>
-                      <div class="trip-info__aeroflot"><img src="assets/png/aeroflot.png" width="36" height="36" alt="aeroflot"></div>
+                      <div class="trip-info__aeroflot" data-tooltip="Аэрофлот">
+                        <img
+                          src="assets/png/aeroflot.png"
+                          width="36"
+                          height="36"
+                          alt="aeroflot"
+                        />
+                      </div>
                     </li>
                     <li>
-                      <div class="trip-info__belavia"><img src="assets/png/belavia.png" width="36" height="36" alt="belavia"></div>
+                      <div class="trip-info__belavia" data-tooltip="Белавиа">
+                        <img
+                          src="assets/png/belavia.png"
+                          width="36"
+                          height="36"
+                          alt="belavia"
+                        />
+                      </div>
                     </li>
                   </ul>
                 </div>
                 <div class="trip-info__left">
                   <div class="trip-info__airport">
-                  <ul>
-                    <li>
-                      <div class="trip-info__change"><img src="assets/svg/change.svg" width="16" height="16" alt="change"></div>
-                    </li>
-                    <li>
-                      <div class="trip-info__night"><img src="assets/svg/moon.svg" width="16" height="16" alt="night"></div>
-                    </li>
-                    <li>
-                      <div class="trip-info__time"><img src="assets/svg/hourglass.svg" width="16" height="16" alt="time"></div>
-                    </li>
-                     <li>
-                      <div class="trip-info__time"><img src="assets/svg/luggage.svg" width="16" height="16" alt="time"></div>
-                    </li>
-                  </ul>
+                    <ul>
+                      <li>
+                        <div
+                          class="trip-info__change"
+                          data-tooltip="Смена аэропорта"
+                        >
+                          <img
+                            src="assets/svg/change.svg"
+                            width="16"
+                            height="16"
+                            alt="change"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div
+                          class="trip-info__night"
+                          data-tooltip="Ночная пересадка"
+                        >
+                          <img
+                            src="assets/svg/moon.svg"
+                            width="16"
+                            height="16"
+                            alt="night"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div
+                          class="trip-info__time"
+                          data-tooltip="Долгая пересадка"
+                        >
+                          <img
+                            src="assets/svg/hourglass.svg"
+                            width="16"
+                            height="16"
+                            alt="time"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div
+                          class="trip-info__time"
+                          data-tooltip="Пересадка с самостоятельным получением и сдачей багажа"
+                        >
+                          <img
+                            src="assets/svg/luggage.svg"
+                            width="16"
+                            height="16"
+                            alt="time"
+                          />
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="trip-info__subscribe">
+                    <ul>
+                      <li>
+                        <div
+                          class="trip-info__bell"
+                          data-tooltip="Подписаться на уведомления об изменениях цены билета"
+                        >
+                          <img
+                            src="assets/svg/bell.svg"
+                            width="24"
+                            height="24"
+                            alt="bell"
+                          />
+                        </div>
+                      </li>
+                      <li>
+                        <div class="trip-info__exit" data-tooltip="Поделиться">
+                          <img
+                            src="assets/svg/exit.svg"
+                            width="24"
+                            height="24"
+                            alt="exit"
+                          />
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <div class="trip-info__subscribe">
-                  <ul>
-                    <li>
-                      <div class="trip-info__bell"><img src="assets/svg/bell.svg" width="24" height="24" alt="bell"></div>
-                    </li>
-                    <li>
-                      <div class="trip-info__exit"><img src="assets/svg/exit.svg" width="24" height="24" alt="exit"></div>
-                    </li>
-                  </ul>
-                </div>
-                </div>
-                
               </section>
               <section class="ticket__direction trip-description">
                 <div class="trip-description__date date-info start">
@@ -78,22 +155,58 @@
                 </div>
                 <div class="trip-description__date travel-time">
                   <div class="travel-time__trip-time">
-                    <img class="travel-time__start" src="assets/svg/airplane.svg" alt="airplane">
+                    <p data-tooltip="Вылет из аэропорта 'Минск' (Минск)">
+                      <img
+                        class="travel-time__start"
+                        src="assets/svg/airplane.svg"
+                        alt="airplane"
+                      />
+                    </p>
                     <p>В пути: 1д 7ч 10м</p>
-                    <img class="travel-time__finish" src="assets/svg/airplane.svg" alt="airplane">
+                    <p data-tooltip="Прилет в аэропорт 'Кеннеди' (Нью-Йорк)">
+                      <img
+                        class="travel-time__finish"
+                        src="assets/svg/airplane.svg"
+                        alt="airplane"
+                      />
+                    </p>
                   </div>
                   <div class="travel-time__graf">
                     <div class="travel-time__way1 way1_1">
-                      <div class="way1__line"></div>
-                      <p class="way1__info">msq</p>
+                      <div
+                        class="way1__line"
+                        data-tooltip="В пути 1ч 35мин"
+                      ></div>
+                      <p
+                        class="way1__info"
+                        data-tooltip="Вылет из аэропорта 'Минск' (Минск)"
+                      >
+                        MSQ
+                      </p>
                     </div>
                     <div class="travel-time__transfer transfer1_1">
-                      <div class="transfer__line"></div>
-                      <p class="transfer__info">svo</p>
+                      <div
+                        class="transfer__line"
+                        data-tooltip="Пересадка 3ч 15мин"
+                      ></div>
+                      <p
+                        class="transfer__info"
+                        data-tooltip="Пересадка 3ч 15мин"
+                      >
+                        SVO
+                      </p>
                     </div>
                     <div class="travel-time__way2 way2_1">
-                      <div class="way2__line"></div>
-                      <p class="way2__info">jfk</p>
+                      <div
+                        class="way2__line"
+                        data-tooltip="В пути 2ч 50мин"
+                      ></div>
+                      <p
+                        class="way2__info"
+                        data-tooltip="Прилет в аэропорт 'Кеннеди' (Нью-Йорк)"
+                      >
+                        JFK
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -112,22 +225,40 @@
                 </div>
                 <div class="trip-description__date travel-time">
                   <div class="travel-time__trip-time">
-                    <img class="travel-time__start" src="assets/svg/airplane.svg" alt="airplane">
+                    <p data-tooltip="Вылет из аэропорта 'Кеннеди' (Нью-Йорк)">
+                      <img
+                        class="travel-time__start"
+                        src="assets/svg/airplane.svg"
+                        alt="airplane"
+                      />
+                    </p>
                     <p>В пути: 18ч 10м</p>
-                    <img class="travel-time__finish" src="assets/svg/airplane.svg" alt="airplane">
+                    <p data-tooltip="Прилет в аэропорт 'Минск' (Минск)">
+                      <img
+                      class="travel-time__finish"
+                      src="assets/svg/airplane.svg"
+                      alt="airplane"
+                    />
+                    </p>
+                    
                   </div>
                   <div class="travel-time__graf">
                     <div class="travel-time__way1 way1_2">
-                      <div class="way1__line"></div>
-                      <p class="way1__info">jfk</p>
+                      <div class="way1__line"  data-tooltip="В пути 5ч 50мин"></div>
+                      <p
+                        class="way1__info"
+                        data-tooltip="Вылет из аэропорта 'Кеннеди' (Нью-Йорк)"
+                      >
+                        JFK
+                      </p>
                     </div>
                     <div class="travel-time__transfer transfer1_2">
-                      <div class="transfer__line"></div>
-                      <p class="transfer__info">svo</p>
+                      <div class="transfer__line" data-tooltip="Пересадка 3ч 50мин"></div>
+                      <p class="transfer__info" data-tooltip="Пересадка 3ч 50мин">SVO</p>
                     </div>
                     <div class="travel-time__way2 way2_2">
-                      <div class="way2__line"></div>
-                      <p class="way2__info">msq</p>
+                      <div class="way2__line" data-tooltip="В пути 3ч 10мин"></div>
+                      <p class="way2__info" data-tooltip="Прилет в аэропорт 'Минск' (Минск)">MSQ</p>
                     </div>
                   </div>
                 </div>
@@ -140,13 +271,7 @@
             </article>
           </div>
           <div class="ticket">
-            <aside class="ticket__price"></aside>
-            <article class="ticket__info">
-              <section class="ticket__header">
-              </section>
-              <section class="ticket__from"></section>
-              <section class="ticket__to"></section>
-            </article>
+          
           </div>
         </div>
       </main>
