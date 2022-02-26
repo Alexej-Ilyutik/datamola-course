@@ -3,6 +3,7 @@
   --text-dark: #000;
   --bg-color: rgba(0, 0, 0, 0.25);
   --main-color: rgb(45, 52, 71);
+  --main-btn: rgb(250, 129, 48);
 }
 
 * {
@@ -51,7 +52,7 @@ body {
 .main__container {
   display: flex;
   flex-direction: column;
-  max-width: 850px;
+  max-width: 950px;
   padding: 20px 15px;
 }
 
@@ -59,7 +60,91 @@ body {
   background-color: var(--text-color);
   border-radius: 5px;
   cursor: pointer;
+  display: flex;
 }
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+.ticket__price,
+.ticket__info {
+  padding: 20px 15px;
+}
+
+.price__btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  background-color: var(--main-btn);
+  color: var(--text-color);
+}
+
+.ticket__header,
+.ticket__direction,
+.travel-time__trip-time,
+.travel-time__graf,
+.trip-info__left {
+  display: flex;
+}
+
+.ticket__header {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.trip-info__operators ul,
+.trip-info__subscribe ul {
+  gap: 10px;
+}
+
+.trip-info__airport ul{
+  gap: 8px;
+  margin-right: 20px;
+}
+
+.trip-info__change,
+.trip-info__night,
+.trip-info__time,
+.trip-info__time{
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  padding-top: 4px;
+  box-shadow: 0 0 4px 2px rgba(221, 221, 221, 1);
+}
+
+.trip-info__change img,
+.trip-info__night img,
+.trip-info__time img,
+.trip-info__time img{
+  max-height: 24px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  
+}
+
+.trip-info__asimut img,
+.trip-info__aeroflot img,
+.trip-info__belavia img {
+  max-height: 36px;
+  max-width: 100%;
+  display: block;
+}
+
+.trip-info__bell img,
+.trip-info__exit img{
+   max-height: 24px;
+  max-width: 100%;
+  display: block;
+}
+
 
 .footer {
   background-color: var(--main-color);
@@ -83,7 +168,7 @@ body {
   width: 26px;
 }
 
-.footer p, .footer__link a {
-   color: var(--text-color);
+.footer p,
+.footer__link a {
+  color: var(--text-color);
 }
-
