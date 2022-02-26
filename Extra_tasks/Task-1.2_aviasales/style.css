@@ -54,6 +54,7 @@ body {
   flex-direction: column;
   max-width: 950px;
   padding: 20px 15px;
+  gap: 20px;
 }
 
 .ticket {
@@ -70,7 +71,37 @@ ul {
 
 .ticket__price,
 .ticket__info {
-  padding: 20px 15px;
+  padding: 30px 15px;
+}
+
+.ticket__price {
+  position: relative;
+}
+
+.ticket__price h3{
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.price__description{
+  position: absolute;
+  color: var(--text-color);
+  font-size: 14px;
+  padding: 5px 10px;
+  top: -14px;
+  border-radius: 15px;
+}
+
+.first{
+background-color: rgb(53, 187, 76);
+}
+
+.ticket__line{
+  height: auto;
+  width: 1px;
+  background-color: var(--bg-color);
 }
 
 .price__btn {
