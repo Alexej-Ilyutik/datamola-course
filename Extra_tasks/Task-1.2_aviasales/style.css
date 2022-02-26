@@ -13,7 +13,7 @@
   font-size: 24px;
   font-weight: 500;
   scroll-behavior: smooth;
-  color: var(--text-color);
+  color: var(--text-dark);
 }
 
 html,
@@ -37,6 +37,28 @@ body {
   display: block;
   font-size: 40px;
   text-align: center;
+  color: var(--text-color);
+}
+
+.main {
+  background-color: var(--bg-color);
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__container {
+  display: flex;
+  flex-direction: column;
+  max-width: 850px;
+  padding: 20px 15px;
+}
+
+.ticket {
+  background-color: var(--text-color);
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .footer {
@@ -60,3 +82,8 @@ body {
   background-color: inherit;
   width: 26px;
 }
+
+.footer p, .footer__link a {
+   color: var(--text-color);
+}
+
