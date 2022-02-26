@@ -56,7 +56,7 @@ body {
   display: flex;
   flex-direction: column;
   max-width: 950px;
-  padding: 20px 15px;
+  padding: 20px 40px;
   gap: 20px;
 }
 
@@ -106,6 +106,20 @@ ul {
 
 .first {
   background-color: rgb(53, 187, 76);
+}
+
+.second {
+  background-color: rgb(187, 53, 169);
+}
+
+.btn-description {
+  font-size: 14px;
+  margin-top: 10px;
+  color: var(--main-btn);
+  width: 170px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ticket__line {
@@ -163,8 +177,8 @@ ul {
 }
 
 .travel-time__graf {
-  min-width: 250px;
-  max-width: 300px;
+  min-width: 220px;
+  max-width: 320px;
   width: 20vw;
   gap: 1px;
 }
@@ -179,30 +193,27 @@ ul {
   margin-right: 20px;
 }
 
-.trip-info__change,
-.trip-info__night,
-.trip-info__time,
-.trip-info__time {
+.trip-info__info {
   width: 24px;
   height: 24px;
   border-radius: 50%;
   padding-top: 4px;
   box-shadow: 0 0 4px 2px rgba(221, 221, 221, 1);
+  transition: 0.4s;
 }
 
-.trip-info__change img,
-.trip-info__night img,
-.trip-info__time img,
-.trip-info__time img {
+.trip-info__info:hover {
+  transform: scale(1.2);
+}
+
+.trip-info__info img {
   max-height: 24px;
   max-width: 100%;
   display: block;
   margin: 0 auto;
 }
 
-.trip-info__asimut img,
-.trip-info__aeroflot img,
-.trip-info__belavia img {
+.trip-info__airline img {
   max-height: 36px;
   max-width: 100%;
   display: block;
@@ -311,6 +322,30 @@ ul {
 
 .way2_2 {
   width: 15%;
+}
+
+.way1_3 {
+  width: 25%;
+}
+
+.transfer1_3 {
+  width: 20%;
+}
+
+.way2_3 {
+  width: 55%;
+}
+
+.way1_4 {
+  width: 60%;
+}
+
+.transfer1_4 {
+  width: 20%;
+}
+
+.way2_4 {
+  width: 20%;
 }
 
 .way1__info,
