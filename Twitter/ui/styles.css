@@ -1,12 +1,9 @@
 :root {
-  --text-color: #fff;
-  --text-dark: #000;
-  --bg-color: rgba(0, 0, 0, 0.25);
-  --main-color: rgb(45, 52, 71);
-  --main-btn: rgb(250, 129, 48);
-  --main-btn-hov: rgb(252, 158, 95);
-  --gray-color: rgb(184, 184, 184);
-  --blue: rgb(71, 134, 250);
+  --white-color: #fff;
+  --text-dark: rgba(27, 79, 111, 0.5);
+  --bg-color: #d6e1e8;
+  --main-color: #1b4f6f;
+  --main-btn: rgba(27, 79, 110, 0.35);
 }
 
 * {
@@ -17,10 +14,67 @@
   font-size: 24px;
   font-weight: 500;
   scroll-behavior: smooth;
-  color: var(--text-dark);
+  color: var(--white-color);
 }
 
 html,
 body {
   height: 100%;
+  background-color: var(--bg-color);
+}
+
+.wrapper {
+  width: 1054px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 5px 15px;
+}
+
+.header {
+  padding: 15px 60px;
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: space-between;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.header__foto {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__foto img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: 3px solid var(--white-color);
+  box-shadow: 3px 3px 10px rgba(5, 42, 77, 0.9);
+}
+
+.header__foto figcaption {
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+.header__btn {
+  width: 80px;
+  height: 50px;
+  border: 3px solid var(--white-color);
+  border-radius: 10px;
+  background-color: transparent;
+  padding: 2px 5px;
+  cursor: pointer;
+}
+
+.header__btn img {
+  width: 100%;
+  height: 100%;
+}
+
+.header__btn p {
+ font-size: 0.6em;
 }
