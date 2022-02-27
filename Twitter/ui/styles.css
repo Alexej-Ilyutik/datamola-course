@@ -4,6 +4,7 @@
   --bg-color: #d6e1e8;
   --main-color: #1b4f6f;
   --main-btn: rgba(27, 79, 110, 0.35);
+  --secondary-light: #f0f9fe;
 }
 
 * {
@@ -92,14 +93,11 @@ body {
   background-color: var(--white-color);
   flex: 1 1 auto;
   display: flex;
-  /* align-items: center;
-  justify-content: center; */
 }
 
 .tools {
-  margin: 3px 0;
+  margin: 3px 3px 3px 0;
   background-color: var(--main-color);
-  margin-right: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -118,6 +116,42 @@ body {
 .tools__btn img {
   width: 100%;
   height: 100%;
+}
+
+.message {
+  margin: 3px 0;
+  max-height: 740px;
+  width: 100%;
+  overflow-y: auto;
+  background-color: var(--bg-color);
+}
+
+.message::-webkit-scrollbar {
+  width: 26px;
+  background-color: var(--white-color);
+}
+
+.message::-webkit-scrollbar-track {
+  background-color: var(--secondary-light);
+  border-radius: 3px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.message::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: var(--main-btn);
+   border: 3px solid transparent;
+ background-clip: content-box;
+}
+
+.message::-webkit-scrollbar-thumb:hover {
+  transform: scale(0.5);
+}
+
+.message__line {
+  margin: 3px 0 3px 3px;
+  width: 3px;
+  background-color: var(--main-color);
 }
 
 .footer {
@@ -144,4 +178,11 @@ body {
 
 .footer__author p {
   font-size: 0.8em;
+}
+
+.as {
+  width: 100%;
+  height: 100px;
+  background-color: aqua;
+  margin-bottom: 10px;
 }
