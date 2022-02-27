@@ -125,6 +125,9 @@ body {
   overflow-y: auto;
   background-color: var(--bg-color);
   padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .message::-webkit-scrollbar {
@@ -162,6 +165,15 @@ body {
   gap: 5px;
 }
 
+.content__name{
+  text-transform: capitalize;
+}
+
+.message__content.second,
+.content__name.second{
+ margin-left: auto;
+}
+
 .content__container {
   display: flex;
   gap: 10px;
@@ -175,6 +187,11 @@ body {
   border-bottom-right-radius: 15px;
   padding: 10px 15px;
   box-shadow: 3px 3px 5px rgba(5, 42, 77, 0.5);
+}
+
+.content__area.second {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 0px;
 }
 
 .content__text {
@@ -205,6 +222,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.content__info.second {
+  width: 65%;
 }
 
 .info__retwitt {
