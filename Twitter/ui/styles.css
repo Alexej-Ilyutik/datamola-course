@@ -1,0 +1,26 @@
+:root {
+  --text-color: #fff;
+  --text-dark: #000;
+  --bg-color: rgba(0, 0, 0, 0.25);
+  --main-color: rgb(45, 52, 71);
+  --main-btn: rgb(250, 129, 48);
+  --main-btn-hov: rgb(252, 158, 95);
+  --gray-color: rgb(184, 184, 184);
+  --blue: rgb(71, 134, 250);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  scroll-behavior: smooth;
+  color: var(--text-dark);
+}
+
+html,
+body {
+  height: 100%;
+}
