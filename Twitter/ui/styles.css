@@ -210,7 +210,9 @@ body {
   height: 55px;
   border-radius: 50%;
   background-color: var(--main-color);
+  border: 4px solid var(--white-color);
   padding: 0 0 0 7px;
+  box-shadow: 3px 3px 10px rgba(5, 42, 77, 0.9);
 }
 
 .message__input button img {
@@ -498,6 +500,7 @@ body {
     margin-top: 20px;
   }
   .message__input.input-comment button {
+    border: 3px solid var(--white-color);
     width: 40px;
     height: 40px;
   }
@@ -640,5 +643,6 @@ body {
     width: 30px;
     height: 30px;
     padding: 0 0 0 4px;
+    border: 2px solid var(--white-color);
   }
 }
