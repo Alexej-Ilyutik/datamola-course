@@ -31,9 +31,12 @@
           <button class="tools__btn btn">
             <img src="assets/svg/New_twitt.svg" alt="new twitt" />
           </button>
-          <button class="tools__btn btn">
-            <img src="assets/svg/Search.svg" alt="search" />
-          </button>
+          <form action="#popup">
+            <button class="tools__btn btn">
+              <img src="assets/svg/Search.svg" alt="search" />
+            </button>
+          </form>
+
           <button class="tools__btn btn">
             <img src="assets/svg/Contacts.svg" alt="contacts" />
           </button>
@@ -61,7 +64,9 @@
                   printer took a galley of type and scrambled it to make a type
                   specimen book.
                 </p>
-                <div class="content__hesh secondary-text">#course#front-end</div>
+                <div class="content__hesh secondary-text">
+                  #course#front-end
+                </div>
               </div>
               <div class="content__settings">
                 <button class="content__btn">
@@ -107,7 +112,9 @@
             </div>
           </div>
           <div class="message__content second content">
-            <div class="content__name second secondary-text">doctor strange</div>
+            <div class="content__name second secondary-text">
+              doctor strange
+            </div>
             <div class="content__container">
               <div class="content__area second">
                 <p class="content__text">
@@ -267,6 +274,59 @@
             </div>
           </div>
           <button class="message__btn btn">Show more...</button>
+          <div class="tools__popup" id="popup">
+            <a href="#" class="popup__area"></a>
+            <div class="popup__body">
+              <div class="popup__content">
+                <a href="#" class="popup__close">&times;</a>
+                <div class="popup__title">Filter:</div>
+                <form class="popup__choice choice" action="#">
+                  <div class="choice__name name box">
+                    <label class="name__label" for="name_id">by Name:</label>
+                    <input
+                      class="name__text"
+                      type="text"
+                      id="name_id"
+                      name="name_value"
+                      placeholder="input author name.."
+                    />
+                  </div>
+                  <div class="choice__date date box">
+                    <label class="date__label" for="date_id">by Date:</label>
+                    <input
+                      class="date__text"
+                      type="date"
+                      id="date_id"
+                      name="date_value"
+                    />
+                  </div>
+                  <div class="choice__content content box">
+                    <label class="content__label" for="content_id"
+                      >by Content:</label
+                    >
+                    <input
+                      class="content__value"
+                      type="text"
+                      id="content_id"
+                      name="content_value"
+                      placeholder="input text..."
+                    />
+                  </div>
+                  <div class="choice__hesh hesh box">
+                    <label class="hesh__label" for="hesh_id">by Hashtag:</label>
+                    <input
+                      class="hesh__text"
+                      type="text"
+                      id="hesh_id"
+                      name="hesh_value"
+                      placeholder="input heshtag..."
+                    />
+                  </div>
+                  <button class="choice__btn">Apply</button>
+                </form>
+              </div>
+            </div>
+          </div>
         </article>
         <div class="message__line"></div>
       </main>

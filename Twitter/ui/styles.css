@@ -133,7 +133,7 @@ body {
 
 .message {
   margin: 3px 0;
-  max-height: 78.3vh;
+  max-height: 78.5vh;
   flex: 1 auto;
   width: 100%;
   overflow-y: auto;
@@ -142,6 +142,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  position: relative;
 }
 
 .message::-webkit-scrollbar {
@@ -301,6 +302,106 @@ body {
   border: none;
   border-radius: 10px;
   margin: 20px auto 0 auto;
+}
+
+.tools__popup {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(167, 182, 202, 0.6);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.6s ease-out;
+}
+
+.tools__popup:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tools__popup:target .popup__content {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.popup__body {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 15px;
+}
+
+.popup__content {
+  background-color: var(--main-color);
+  width: 550px;
+  padding: 25px 25px;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  transition: all 0.6s ease-out;
+  margin-bottom: 150px;
+  transform: translate(-100%, 0);
+  opacity: 0;
+}
+
+.popup__title {
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.popup__area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.popup__choice {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.box input {
+  width: 70%;
+  height: 40px;
+  background-color: var(--bg-color);
+  color: var(--main-color);
+  padding: 0 5px;
+  border: none;
+}
+
+.choice__btn {
+  padding: 10px 0;
+  width: 50%;
+  margin: 20px auto 0 auto;
+  border-radius: 5px;
+  background-color: var(--bg-color);
+  color: var(--main-color);
+  box-shadow: 3px 3px 5px rgba(5, 42, 77, 0.5);
+  border: none;
+}
+
+.popup__close {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  font-size: 2.2rem;
+  text-decoration: none;
+  z-index: 5;
 }
 
 .footer {
