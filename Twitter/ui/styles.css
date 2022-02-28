@@ -169,10 +169,20 @@ body {
   background-color: var(--main-color);
 }
 
+.message__line.left {
+  margin: 3px 3px 3px 0;
+}
+
 .message__input {
   display: flex;
   gap: 5px;
   margin-bottom: 10px;
+}
+
+.message__input.input-comment {
+  position: sticky;
+  width: 100%;
+  bottom: 0px;
 }
 
 .message__input textarea {
@@ -194,6 +204,14 @@ body {
   background-color: transparent;
 }
 
+.message__input.input-comment button {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  padding: 0 0 0 7px;
+}
+
 .message__input button img {
   width: 100%;
   height: 100%;
@@ -208,6 +226,13 @@ body {
 
 .content__name {
   text-transform: capitalize;
+}
+
+.message__comment {
+  font-size: 1.8rem;
+  color: var(--main-color);
+  text-align: center;
+  margin-top: 30px;
 }
 
 .message__content.second,
@@ -292,13 +317,17 @@ body {
   font-size: 0.8rem;
 }
 
+.text-twitt {
+  text-align: center;
+}
+
 .message__btn {
   width: 220px;
   padding: 10px 0;
   background-color: var(--main-btn);
   border: none;
   border-radius: 10px;
-  margin: 20px auto 0 auto;
+  margin: 20px auto 50px auto;
 }
 
 .tools__popup {
@@ -463,6 +492,14 @@ body {
   .popup__content {
     width: 450px;
   }
+
+  .message__comment {
+    margin-top: 20px;
+  }
+  .message__input.input-comment button {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -593,5 +630,14 @@ body {
   .box input {
     width: 100%;
     height: 30px;
+  }
+
+  .message__comment {
+    margin-top: 15px;
+  }
+  .message__input.input-comment button {
+    width: 30px;
+    height: 30px;
+    padding: 0 0 0 4px;
   }
 }
