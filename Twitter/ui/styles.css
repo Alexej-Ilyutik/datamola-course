@@ -440,6 +440,54 @@ body {
   z-index: 5;
 }
 
+.message__form {
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.form__content {
+  background-color: var(--main-color);
+  width: 18rem;
+  padding: 1.5rem 1.5rem;
+  overflow: hidden;
+  border-radius: 0.42rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form__login,
+.form__password {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form__label {
+  text-align: start;
+}
+
+.form__text {
+  height: 1.7rem;
+  background-color: var(--bg-color);
+  color: var(--main-color);
+  padding: 0 0.21rem;
+  border: none;
+}
+
+.form__button {
+  width: 8rem;
+  padding: 0.42rem 0;
+  border-radius: 0.21rem;
+  background-color: var(--text-dark);
+  color: var(--white-color);
+  box-shadow: 0.125rem 0.125rem 0.21rem rgba(5, 42, 77, 0.5);
+  border: 0.1rem solid var(--white-color);
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
 .footer {
   background-color: var(--main-color);
   padding: 0 2.5rem;

@@ -30,7 +30,36 @@
       </header>
       <main class="main">
         <div class="message__line left"></div>
-        <div class="message"></div>
+        <div class="message">
+          <div class="message__comment">Authorization:</div>
+          <form class="message__form form" action="#">
+            <div class="form__content">
+              <div class="form__login">
+                <label class="form__label" for="login_id"
+                  >Enter Your Login:</label
+                >
+                <input
+                  class="form__text"
+                  type="text"
+                  id="login_id"
+                  name="login_value"
+                />
+              </div>
+              <div class="form__password">
+                <label class="form__label" for="password_id"
+                  >Enter Your Password:</label
+                >
+                <input
+                  class="form__text"
+                  type="password"
+                  id="password_id"
+                  name="password_value"
+                />
+              </div>
+            </div>
+            <button class="form__button btn">Enter</button>
+          </form>
+        </div>
         <div class="message__line"></div>
       </main>
       <footer class="footer">
