@@ -34,32 +34,32 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding: 5px 15px;
+  padding: 0.2rem 0.625rem;
 }
 
 .header {
-  padding: 0 60px;
+  padding: 0 2.5rem;
   height: 10vh;
   background-color: var(--main-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 0.42rem;
+  border-top-right-radius: 0.42rem;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 0.83rem;
 }
 
 .logo img {
-  width: 65px;
-  height: 65px;
+  width: 2.71rem;
+  height: 2.71rem;
   border-radius: 50%;
-  border: 3px solid var(--white-color);
-  box-shadow: 3px 3px 10px rgba(5, 42, 77, 0.9);
+  border: 0.125rem solid var(--white-color);
+  box-shadow: 0.125rem 0.125rem 0.42rem rgba(5, 42, 77, 0.9);
 }
 
 .logo figcaption {
@@ -75,20 +75,21 @@ body {
 
 .btn:hover {
   transform: scale(1.1);
-  box-shadow: 3px 3px 10px rgba(5, 42, 77, 0.9);
+  box-shadow: 0.125rem 0.125rem 0.42rem rgba(5, 42, 77, 0.9);
 }
 
 .header__button {
-  margin-top: 5px;
+  margin-top: 0.21rem;
+  text-align: center;
 }
 
 .header__btn {
-  width: 70px;
-  height: 45px;
-  border: 3px solid var(--white-color);
-  border-radius: 10px;
-  padding: 2px 5px;
-  margin-bottom: 2px;
+  width: 2.92rem;
+  height: 1.875rem;
+  border: 0.125rem solid var(--white-color);
+  border-radius: 0.42rem;
+  padding: 0.08rem 0.21rem;
+  margin-bottom: 0.09rem;
 }
 
 .header__btn img {
@@ -99,7 +100,7 @@ body {
 .header__button-description {
   font-size: 0.6rem;
   text-align: center;
-  letter-spacing: 1.8px;
+  letter-spacing: 0.075rem;
 }
 
 .main {
@@ -109,21 +110,21 @@ body {
 }
 
 .tools {
-  margin: 3px 3px 3px 0;
+  margin: 0.125rem 0.125rem 0.125rem 0;
   background-color: var(--main-color);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 35px 10px;
-  gap: 20px;
+  padding: 1.46rem 0.42rem;
+  gap: 0.83rem;
 }
 
 .tools__btn {
-  width: 80px;
-  height: 70px;
+  width: 3.3rem;
+  height: 2.92rem;
   border: none;
-  border-radius: 15px;
-  padding: 2px 5px;
+  border-radius: 0.625rem;
+  padding: 0.08rem 0.21rem;
 }
 
 .tools__btn img {
@@ -132,73 +133,73 @@ body {
 }
 
 .message {
-  margin: 3px 0;
+  margin: 0.125rem 0;
   max-height: 78.5vh;
   flex: 1 auto;
   width: 100%;
   overflow-y: auto;
   background-color: var(--bg-color);
-  padding: 20px 25px;
+  padding: 0.83rem 1rem;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.42rem;
   position: relative;
 }
 
 .message::-webkit-scrollbar {
-  width: 26px;
+  width: 1.08rem;
   background-color: var(--white-color);
 }
 
 .message::-webkit-scrollbar-track {
   background-color: var(--secondary-light);
-  border-radius: 3px;
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 0.125rem;
+  box-shadow: inset 0 0 0.25rem rgba(0, 0, 0, 0.3);
 }
 
 .message::-webkit-scrollbar-thumb {
-  border-radius: 6px;
+  border-radius: 0.25rem;
   background: var(--main-btn);
-  border: 3px solid transparent;
+  border: 0.125rem solid transparent;
   background-clip: content-box;
 }
 
 .message__line {
-  margin: 3px 0 3px 3px;
-  width: 3px;
+  margin: 0.125rem 0 0.125rem 0.125rem;
+  width: 0.125rem;
   background-color: var(--main-color);
 }
 
 .message__line.left {
-  margin: 3px 3px 3px 0;
+  margin: 0.125rem 0.125rem 0.125rem 0;
 }
 
 .message__input {
   display: flex;
-  gap: 5px;
-  margin-bottom: 10px;
+  gap: 0.21rem;
+  margin-bottom: 0.42rem;
 }
 
 .message__input.input-comment {
   position: sticky;
   margin-top: auto;
   width: 100%;
-  bottom: 0px;
+  bottom: 0;
 }
 
 .message__input textarea {
   resize: none;
   flex: auto;
   outline: none;
-  border: 3px solid var(--main-color);
+  border: 0.125rem solid var(--main-color);
   color: var(--main-color);
-  padding: 10px 15px;
+  padding: 0.42rem 0.625rem;
   background-color: var(--white-color);
 }
 
 .message__input button {
-  width: 40px;
-  height: 40px;
+  width: 1.7rem;
+  height: 1.7rem;
   border: none;
   margin-top: auto;
   cursor: pointer;
@@ -206,13 +207,13 @@ body {
 }
 
 .message__input.input-comment button {
-  width: 55px;
-  height: 55px;
+  width: 2.29rem;
+  height: 2.29rem;
   border-radius: 50%;
   background-color: var(--main-color);
-  border: 4px solid var(--white-color);
-  padding: 0 0 0 7px;
-  box-shadow: 3px 3px 10px rgba(5, 42, 77, 0.9);
+  border: 0.17rem solid var(--white-color);
+  padding: 0 0 0 0.29rem;
+  box-shadow: 0.125rem 0.125rem 0.42rem rgba(5, 42, 77, 0.9);
 }
 
 .message__input button img {
@@ -224,7 +225,7 @@ body {
   max-width: 85%;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 0.21rem;
 }
 
 .content__name {
@@ -235,7 +236,7 @@ body {
   font-size: 1.8rem;
   color: var(--main-color);
   text-align: center;
-  margin-top: 30px;
+  margin-top: 1.25rem;
 }
 
 .message__content.second,
@@ -245,28 +246,28 @@ body {
 
 .content__container {
   display: flex;
-  gap: 10px;
+  gap: 0.42rem;
 }
 
 .content__area {
   background-color: var(--secondary-light);
-  border: 3px solid var(--main-color);
-  border-top-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  padding: 10px 15px;
-  box-shadow: 3px 3px 5px rgba(5, 42, 77, 0.5);
+  border: 0.125rem solid var(--main-color);
+  border-top-right-radius: 0.625rem;
+  border-bottom-left-radius: 0.625rem;
+  border-bottom-right-radius: 0.625rem;
+  padding: 0.42rem 0.625rem;
+  box-shadow: 0.125rem 0.125rem 0.21rem rgba(5, 42, 77, 0.5);
   cursor: pointer;
 }
 
 .content__area.second {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 0px;
+  border-top-left-radius: 0.625rem;
+  border-top-right-radius: 0;
 }
 
 .content__text {
   color: var(--main-color);
-  margin-bottom: 20px;
+  margin-bottom: 0.83rem;
 }
 
 .content__hesh {
@@ -276,11 +277,11 @@ body {
 .content__settings {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 0.625rem;
 }
 
 .content__btn {
-  width: 36px;
+  width: 1.5rem;
   height: auto;
   border: none;
   cursor: pointer;
@@ -297,7 +298,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 15px;
+  gap: 0.625rem;
 }
 
 .content__info.second {
@@ -307,11 +308,11 @@ body {
 .info__retwitt {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.21rem;
 }
 
 .info__retwitt img {
-  width: 18px;
+  width: 0.75rem;
   height: auto;
 }
 
@@ -325,12 +326,12 @@ body {
 }
 
 .message__btn {
-  width: 220px;
-  padding: 10px 0;
+  width: 9.17rem;
+  padding: 0.42rem 0;
   background-color: var(--main-btn);
   border: none;
-  border-radius: 10px;
-  margin: 20px auto 50px auto;
+  border-radius: 0.42rem;
+  margin: 0.83rem auto 2.08rem auto;
 }
 
 .tools__popup {
@@ -360,26 +361,26 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px 15px;
+  padding: 1.25rem 0.625rem;
 }
 
 .popup__content {
   background-color: var(--main-color);
-  width: 550px;
-  padding: 25px 25px;
+  width: 22.9rem;
+  padding: 1rem 1rem;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 0.42rem;
   position: relative;
   transition: all 0.6s ease-out;
-  margin-bottom: 150px;
+  margin-bottom: 6.25rem;
   transform: translate(-100%, 0);
   opacity: 0;
 }
 
 .popup__title {
   font-size: 1.8rem;
-  letter-spacing: 2px;
-  margin-bottom: 15px;
+  letter-spacing: 0.08rem;
+  margin-bottom: 0.625rem;
 }
 
 .popup__area {
@@ -393,61 +394,135 @@ body {
 .popup__choice {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 0.83rem;
 }
 
 .box {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 0.42rem;
   align-items: center;
 }
 
 .box input {
   width: 70%;
-  height: 40px;
+  height: 1.7rem;
   background-color: var(--bg-color);
   color: var(--main-color);
-  padding: 0 5px;
+  padding: 0 0.21rem;
   border: none;
 }
 
-.choice__btn {
-  padding: 10px 0;
-  width: 50%;
-  margin: 20px auto 0 auto;
-  border-radius: 5px;
+.choice__btns {
+  margin: 0.83rem auto 0 auto;
+  display: flex;
+  gap: 1rem;
+}
+
+.choice__button {
+  width: 5rem;
+  padding: 0.42rem 0;
+  border-radius: 0.21rem;
   background-color: var(--bg-color);
   color: var(--main-color);
-  box-shadow: 3px 3px 5px rgba(5, 42, 77, 0.5);
+  box-shadow: 0.125rem 0.125rem 0.21rem rgba(5, 42, 77, 0.5);
   border: none;
+  cursor: pointer;
 }
 
 .popup__close {
   position: absolute;
-  right: 25px;
-  top: 15px;
+  right: 1rem;
+  top: 0.625rem;
   font-size: 2.2rem;
   text-decoration: none;
   z-index: 5;
 }
 
+.message__form {
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.form__content {
+  background-color: var(--main-color);
+  width: 18rem;
+  padding: 1.8rem 1.5rem;
+  overflow: hidden;
+  border-radius: 0.42rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form__login,
+.form__password {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form__label {
+  text-align: start;
+}
+
+.form__text {
+  height: 1.7rem;
+  background-color: var(--bg-color);
+  color: var(--main-color);
+  padding: 0 0.21rem;
+  border: none;
+}
+
+.form__button {
+  width: 8rem;
+  padding: 0.42rem 0;
+  border-radius: 0.21rem;
+  background-color: var(--text-dark);
+  color: var(--white-color);
+  box-shadow: 0.125rem 0.125rem 0.21rem rgba(5, 42, 77, 0.5);
+  border: 0.1rem solid var(--white-color);
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.message__error {
+  position: relative;
+  top: 20%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: var(--main-color);
+  width: 18rem;
+  padding: 1.8rem 1.5rem;
+  border-radius: 0.42rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.message__img figcaption {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+}
+
 .footer {
   background-color: var(--main-color);
-  padding: 0 60px;
+  padding: 0 2.5rem;
   height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  gap: 20px;
+  border-bottom-left-radius: 0.42rem;
+  border-bottom-right-radius: 0.42rem;
+  gap: 0.83rem;
 }
 
 .logo .logo__cat {
-  width: 55px;
-  height: 55px;
+  width: 2.29rem;
+  height: 2.29rem;
   border: none;
 }
 
@@ -464,45 +539,13 @@ body {
 .footer__date {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 0.21rem;
   justify-content: center;
 }
 
 @media screen and (max-width: 768px) {
   * {
     font-size: 18px;
-  }
-
-  .logo {
-    gap: 10px;
-  }
-
-  .logo img {
-    width: 55px;
-    height: 55px;
-  }
-
-  .logo .logo__cat {
-    width: 45px;
-    height: 45px;
-  }
-
-  .tools__btn {
-    width: 50px;
-    height: 40px;
-  }
-
-  .popup__content {
-    width: 450px;
-  }
-
-  .message__comment {
-    margin-top: 20px;
-  }
-  .message__input.input-comment button {
-    border: 3px solid var(--white-color);
-    width: 40px;
-    height: 40px;
   }
 }
 
@@ -511,82 +554,34 @@ body {
     font-size: 14px;
   }
 
-  .wrapper {
-    padding: 3px 3px;
-  }
-
   .header {
-    padding: 0 20px;
     height: 8vh;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    padding: 0 1.5rem;
   }
 
   .message {
     max-height: 82.5vh;
-    padding: 15px 10px;
   }
 
   .footer {
-    padding: 0 20px;
     height: 8vh;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    padding: 0 1.5rem;
   }
 
-  .logo {
+  .footer .logo {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 5px;
-  }
-
-  .logo img {
-    width: 40px;
-    height: 40px;
+    gap: 0.2rem;
   }
 
   .logo .logo__cat {
-    width: 20px;
-    height: 20px;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
-  .header__btn {
-    width: 40px;
-    height: 30px;
-    border: 1px solid var(--white-color);
-    border-radius: 5px;
-  }
-
-  .tools {
-    padding: 30px 5px;
-  }
-
-  .tools__btn {
-    width: 40px;
-    height: 30px;
-    border-radius: 5px;
-  }
-
-  .popup__content {
-    width: 350px;
-  }
-
-  .message__input button {
-    width: 25px;
-    height: 25px;
-  }
-
-  .content__btn {
-    width: 26px;
-  }
-
-  .message__btn {
-    width: 150px;
-    border-radius: 5px;
-  }
-
-  .message::-webkit-scrollbar {
-    width: 20px;
+  .logo figcaption {
+    font-size: 1rem;
+    font-weight: 500;
   }
 
   .content__info {
@@ -597,35 +592,6 @@ body {
     width: 85%;
   }
 
-  .content__container {
-    gap: 5px;
-  }
-
-  .content__area {
-    border: 2px solid var(--main-color);
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    padding: 5px 5px;
-  }
-
-  .content__area.second {
-    border-top-left-radius: 10px;
-  }
-
-  .content__text {
-    margin-bottom: 10px;
-  }
-
-  .footer__date {
-    gap: 1px;
-  }
-
-  .date-text,
-  .date-date {
-    font-size: 0.8rem;
-  }
-
   .box {
     flex-direction: column;
     align-items: flex-start;
@@ -633,16 +599,10 @@ body {
 
   .box input {
     width: 100%;
-    height: 30px;
   }
 
-  .message__comment {
-    margin-top: 15px;
-  }
-  .message__input.input-comment button {
-    width: 30px;
-    height: 30px;
-    padding: 0 0 0 4px;
-    border: 2px solid var(--white-color);
+  .date-text,
+  .date-date {
+    font-size: 0.7rem;
   }
 }
