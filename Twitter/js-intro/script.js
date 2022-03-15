@@ -256,3 +256,19 @@ const tweets = [
     ],
   },
 ];
+
+
+let module = (function () {
+  return {
+    getTweet: function (id) {
+      tweets.forEach((el) => {
+        if (el.id === id) {
+          console.log(el);
+        }
+      });
+    },
+  };
+})();
+
+module.getTweet('15');
+
