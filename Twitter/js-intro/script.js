@@ -344,12 +344,23 @@ let module = (function () {
       }
       console.log(tweets);
     },
+    // validateComment: function (com) {
+    //   let val = tweets[com - 1].comments;
+    //   if(val.length>0){
+    //     let arr = Object.keys(val[0]);
+    //     validate(arr, val);
+    //   }
+      
+    // },
   };
 })();
 
 // module.getTweets();
+
 //  module.getTweet('10');
+
 // module.validateTweet(19);
+
 // module.addTweet(
 //   'Человек может всё, когда он понимает, что он — часть чего-то большего.'
 // );
@@ -357,4 +368,6 @@ let module = (function () {
 
 // module.editTweet('20', 'hi');
 
-module.removeTweet('20');
+// module.removeTweet('20');
+
+// module.validateComment(18);
