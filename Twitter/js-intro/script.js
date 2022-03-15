@@ -334,6 +334,16 @@ let module = (function () {
       this.validateTweet(id);
       console.log(obj);
     },
+    removeTweet: function (id) {
+      const obj = this.getTweet(id);
+      if (obj.author === user) {
+        tweets.splice(id - 1);
+        console.log(true);
+      } else {
+        console.log(false);
+      }
+      console.log(tweets);
+    },
   };
 })();
 
@@ -345,4 +355,6 @@ let module = (function () {
 // );
 // console.log(tweets);
 
-module.editTweet('20', 'hi');
+// module.editTweet('20', 'hi');
+
+module.removeTweet('20');
