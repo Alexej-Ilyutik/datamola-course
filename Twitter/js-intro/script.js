@@ -257,9 +257,23 @@ const tweets = [
   },
 ];
 
-
 let module = (function () {
+  // let user = 'Nicholas Fury';
+
+  function validateStr(val, key) {
+    if (
+      val.includes(`${key}`) &&
+      val[key].length > 0 &&
+      typeof val.id === 'string'
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   return {
+    // getTweets: function (skip = 0, top = 0, filterConfig = null) {},
     getTweet: function (id) {
       tweets.forEach((el) => {
         if (el.id === id) {
@@ -267,8 +281,31 @@ let module = (function () {
         }
       });
     },
+    validateTweet: function (tw) {
+      let tweet = tweets[tw - 1];
+      let arrKeys = Object.keys(tweet);
+      if (
+        arrKeys.includes('id') &&
+        tweet.id.length > 0 &&
+        typeof tweet.id === 'string' &&
+        arrKeys.includes('text') &&
+        tweet.text.length > 0 &&
+        typeof tweet.text === 'string' &&
+        arrKeys.includes('createdAt') &&
+        tweet.createdAt instanceof Date &&
+        arrKeys.includes('author') &&
+        tweet.author.length > 0 &&
+        typeof tweet.author === 'string' &&
+        arrKeys.includes('comments') &&
+        Array.isArray(tweet.comments)
+      ) {
+        console.log(true);
+      } else {
+        console.log(false);
+      }
+    },
   };
 })();
 
-module.getTweet('15');
-
+// module.getTweet('20');
+module.validateTweet(19);
