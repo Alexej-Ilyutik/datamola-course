@@ -258,22 +258,36 @@ const tweets = [
 ];
 
 let module = (function () {
-  // let user = 'Nicholas Fury';
-
-  function validateStr(val, key) {
+  let user = 'Nicholas Fury';
+  function validate(arr, val) {
     if (
-      val.includes(`${key}`) &&
-      val[key].length > 0 &&
-      typeof val.id === 'string'
+      arr.includes('id') &&
+      val.id.length > 0 &&
+      typeof val.id === 'string' &&
+      arr.includes('text') &&
+      val.text.length > 0 &&
+      typeof val.text === 'string' &&
+      arr.includes('createdAt') &&
+      val.createdAt instanceof Date &&
+      arr.includes('author') &&
+      val.author.length > 0 &&
+      typeof val.author === 'string' &&
+      arr.includes('comments') &&
+      Array.isArray(val.comments)
     ) {
-      return true;
+      console.log(true);
     } else {
-      return false;
+      console.log(false);
     }
   }
 
   return {
-    // getTweets: function (skip = 0, top = 0, filterConfig = null) {},
+    getTweets: function (skip = 0, top = 0, filterConfig = null) {
+      let sortTweetsByDate = tweets
+        .slice()
+        .sort((a, b) => b.createdAt - a.createdAt);
+      console.log(sortTweetsByDate);
+    },
     getTweet: function (id) {
       tweets.forEach((el) => {
         if (el.id === id) {
@@ -282,23 +296,31 @@ let module = (function () {
       });
     },
     validateTweet: function (tw) {
-      let tweet = tweets[tw - 1];
-      let arrKeys = Object.keys(tweet);
-      if (
-        arrKeys.includes('id') &&
-        tweet.id.length > 0 &&
-        typeof tweet.id === 'string' &&
-        arrKeys.includes('text') &&
-        tweet.text.length > 0 &&
-        typeof tweet.text === 'string' &&
-        arrKeys.includes('createdAt') &&
-        tweet.createdAt instanceof Date &&
-        arrKeys.includes('author') &&
-        tweet.author.length > 0 &&
-        typeof tweet.author === 'string' &&
-        arrKeys.includes('comments') &&
-        Array.isArray(tweet.comments)
-      ) {
+      let val = tweets[tw - 1];
+      let arr = Object.keys(val);
+      validate(arr, val);
+    },
+    addTweet: function (text) {
+      let twitsLength = tweets.length;
+      const obj = new Object();
+      const arrId = [];
+      tweets.forEach((el) => arrId.push(el.id));
+      function getRandomInt() {
+        let num = Math.floor(1 + Math.random() * 1000);
+        num = String(num);
+        if (arrId.includes(num)) {
+          getRandomInt();
+        } else {
+          obj.id = num;
+        }
+      }
+      getRandomInt();
+      obj.text = text;
+      obj.createdAt = new Date();
+      obj.author = user;
+      obj.comments = [];
+      tweets[tweets.length] = obj;
+      if (twitsLength !== tweets.length) {
         console.log(true);
       } else {
         console.log(false);
@@ -307,5 +329,10 @@ let module = (function () {
   };
 })();
 
+// module.getTweets();
 // module.getTweet('20');
-module.validateTweet(19);
+// module.validateTweet(19);
+module.addTweet(
+  'Человек может всё, когда он понимает, что он — часть чего-то большего.'
+);
+console.log(tweets);
