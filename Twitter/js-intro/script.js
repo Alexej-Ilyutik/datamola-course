@@ -258,7 +258,7 @@ const tweets = [
 ];
 
 let module = (function () {
-  let user = 'Nicholas Fury';
+  let user = 'Hawkeye';
   function validate(arr, val) {
     if (
       arr.includes('id') &&
@@ -289,11 +289,8 @@ let module = (function () {
       console.log(sortTweetsByDate);
     },
     getTweet: function (id) {
-      tweets.forEach((el) => {
-        if (el.id === id) {
-          console.log(el);
-        }
-      });
+      return tweets.find((el) => el.id === id);
+      // console.log(tweets.find((el) => el.id === id));
     },
     validateTweet: function (tw) {
       let val = tweets[tw - 1];
@@ -326,13 +323,26 @@ let module = (function () {
         console.log(false);
       }
     },
+
+    editTweet: function (id, text) {
+      const obj = this.getTweet(id);
+      if (obj.author !== user) {
+        console.log(false);
+      } else {
+        obj.text = text;
+      }
+      this.validateTweet(id);
+      console.log(obj);
+    },
   };
 })();
 
 // module.getTweets();
-// module.getTweet('20');
+//  module.getTweet('10');
 // module.validateTweet(19);
-module.addTweet(
-  'Человек может всё, когда он понимает, что он — часть чего-то большего.'
-);
-console.log(tweets);
+// module.addTweet(
+//   'Человек может всё, когда он понимает, что он — часть чего-то большего.'
+// );
+// console.log(tweets);
+
+module.editTweet('20', 'hi');
