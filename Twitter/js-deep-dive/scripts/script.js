@@ -1,16 +1,11 @@
-class General {
-  constructor(id, text, createdAt, author) {
-    this._id = id;
-    this.text = text;
-    this.createAt = new Date(createdAt);
-    this.author = author;
-  }
-}
+import General from './General.js';
+import Tweet from './Tweet.js';
 
 const tweet = new General('5', 'hello', '05.05.2022', "i'm");
 console.log(tweet);
-// const tweet2 = new General('8', 'hi', '12.02.2022', 'his');
-// console.log(tweet2);
+
+const tweet2 = new Tweet('8', 'hi', '12.03.2022', 'He', ['fff']);
+console.log(tweet2);
 
 // class Tweet {
 //   constructor(id, text, createdAt, author) {
