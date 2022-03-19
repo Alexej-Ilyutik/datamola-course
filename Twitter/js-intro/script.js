@@ -271,13 +271,11 @@ const module = (function () {
       val.createdAt instanceof Date &&
       arr.includes('author') &&
       val.author.length > 0 &&
-      typeof val.author === 'string' &&
-      arr.includes('comments') &&
-      Array.isArray(val.comments)
+      typeof val.author === 'string'
     ) {
-      console.log(true);
+      return true;
     } else {
-      console.log(false);
+      return false;
     }
   }
 
@@ -299,12 +297,17 @@ const module = (function () {
     },
     getTweet: function (id) {
       return tweets.find((el) => el.id === id);
-      // console.log(tweets.find((el) => el.id === id));
     },
     validateTweet: function (tw) {
       const val = tweets[tw - 1];
       const arr = Object.keys(val);
-      validate(arr, val);
+      console.log(val);
+
+      if (arr.includes('comments') && Array.isArray(val.comments)) {
+        return validate(arr, val);
+      } else {
+        return false;
+      }
     },
     addTweet: function (text) {
       let twitsLength = tweets.length;
@@ -366,9 +369,9 @@ const module = (function () {
 
 // console.log(module.getTweets(1, 3, { author: 'Halk' }));
 
-console.log(module.getTweet('10'));
+// console.log(module.getTweet('5'));
 
-// module.validateTweet(19);
+console.log(module.validateTweet(20));
 
 // module.addTweet(
 //   'Человек может всё, когда он понимает, что он — часть чего-то большего.'
