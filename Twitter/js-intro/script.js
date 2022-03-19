@@ -258,7 +258,8 @@ const tweets = [
 ];
 
 const module = (function () {
-  let user = ' Nicholas Fury';
+  // let user = 'Nicholas Fury';
+  let user = 'Hawkeye';
   function validateComm(arr, val) {
     if (
       arr.includes('id') &&
@@ -341,12 +342,15 @@ const module = (function () {
     editTweet: function (id, text) {
       const obj = this.getTweet(id);
       if (obj.author !== user) {
-        console.log(false);
+        return false;
       } else {
         obj.text = text;
+        if (this.validateTweet(tweets.indexOf(obj) + 1)) {
+          return true;
+        } else {
+          return false;
+        }
       }
-      this.validateTweet(id);
-      console.log(obj);
     },
     removeTweet: function (id) {
       const obj = this.getTweet(id);
@@ -375,13 +379,13 @@ const module = (function () {
 
 // console.log(module.validateTweet(20));
 
-console.log(
-  module.addTweet(
-    'Человек может всё, когда он понимает, что он — часть чего-то большего.'
-  )
-);
+// console.log(
+//   module.addTweet(
+//     'Человек может всё, когда он понимает, что он — часть чего-то большего.'
+//   )
+// );
 
-// module.editTweet('20', 'hi');
+console.log(module.editTweet('20', 'fffff'));
 
 // module.removeTweet('20');
 
