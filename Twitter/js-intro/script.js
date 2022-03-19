@@ -258,7 +258,7 @@ const tweets = [
 ];
 
 const module = (function () {
-  let user = 'Hawkeye';
+  let user = ' Nicholas Fury';
   function validateComm(arr, val) {
     if (
       arr.includes('id') &&
@@ -309,11 +309,9 @@ const module = (function () {
     validateTweet: function (tw) {
       const val = tweets[tw - 1];
       const arr = Object.keys(val);
-      console.log(val);
       return validate(arr, val);
     },
     addTweet: function (text) {
-      let twitsLength = tweets.length;
       const obj = new Object();
       const arrId = [];
       tweets.forEach((el) => arrId.push(el.id));
@@ -332,11 +330,12 @@ const module = (function () {
       obj.author = user;
       obj.comments = [];
       tweets.push(obj);
-      // if (twitsLength !== tweets.length) {
-      //   console.log(true);
-      // } else {
-      //   console.log(false);
-      // }
+
+      if (this.validateTweet(tweets.length)) {
+        return true;
+      } else {
+        return false;
+      }
     },
 
     editTweet: function (id, text) {
@@ -374,11 +373,13 @@ const module = (function () {
 
 // console.log(module.getTweet('5'));
 
-console.log(module.validateTweet(20));
+// console.log(module.validateTweet(20));
 
-// console.log(module.addTweet(
-//   'Человек может всё, когда он понимает, что он — часть чего-то большего.'
-// ));
+console.log(
+  module.addTweet(
+    'Человек может всё, когда он понимает, что он — часть чего-то большего.'
+  )
+);
 
 // module.editTweet('20', 'hi');
 
