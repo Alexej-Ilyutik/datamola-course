@@ -2,7 +2,9 @@ import General from './General.js';
 import Tweet from './Tweet.js';
 
 const tweet = new General('5', 'hello', '05.05.2022', "i'm");
+
 console.log(tweet);
+
 
 const tweet2 = new Tweet('8', 'hi', '12.03.2022', 'He', ['fff']);
 console.log(tweet2);
