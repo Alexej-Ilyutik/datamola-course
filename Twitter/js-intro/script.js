@@ -257,7 +257,7 @@ const tweets = [
   },
 ];
 
-let module = (function () {
+const module = (function () {
   let user = 'Hawkeye';
   function validate(arr, val) {
     if (
@@ -282,19 +282,28 @@ let module = (function () {
   }
 
   return {
-    getTweets: function (skip = 0, top = 0, filterConfig = null) {
-      let sortTweetsByDate = tweets
+    getTweets: function (skip = 0, top = 10, filterConfig = null) {
+      const sortTweets = tweets
         .slice()
-        .sort((a, b) => b.createdAt - a.createdAt);
-      console.log(sortTweetsByDate);
+        .sort((a, b) => b.createdAt - a.createdAt)
+        .slice(skip, skip + top);
+      if (filterConfig === null) {
+        return sortTweets;
+      } else {
+        return sortTweets.filter((el) =>
+          Object.keys(filterConfig).every((key) =>
+            el[key].includes(filterConfig[key])
+          )
+        );
+      }
     },
     getTweet: function (id) {
       return tweets.find((el) => el.id === id);
       // console.log(tweets.find((el) => el.id === id));
     },
     validateTweet: function (tw) {
-      let val = tweets[tw - 1];
-      let arr = Object.keys(val);
+      const val = tweets[tw - 1];
+      const arr = Object.keys(val);
       validate(arr, val);
     },
     addTweet: function (text) {
@@ -316,12 +325,12 @@ let module = (function () {
       obj.createdAt = new Date();
       obj.author = user;
       obj.comments = [];
-      tweets[tweets.length] = obj;
-      if (twitsLength !== tweets.length) {
-        console.log(true);
-      } else {
-        console.log(false);
-      }
+      tweets.push(obj);
+      // if (twitsLength !== tweets.length) {
+      //   console.log(true);
+      // } else {
+      //   console.log(false);
+      // }
     },
 
     editTweet: function (id, text) {
@@ -350,14 +359,14 @@ let module = (function () {
     //     let arr = Object.keys(val[0]);
     //     validate(arr, val);
     //   }
-      
+
     // },
   };
 })();
 
-// module.getTweets();
+// console.log(module.getTweets(1, 3, { author: 'Halk' }));
 
-//  module.getTweet('10');
+console.log(module.getTweet('10'));
 
 // module.validateTweet(19);
 
