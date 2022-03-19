@@ -258,7 +258,6 @@ const tweets = [
 ];
 
 const module = (function () {
-  // let user = 'Nicholas Fury';
   let user = 'Captain Marvel';
   function validateComm(arr, val) {
     if (
@@ -390,6 +389,9 @@ const module = (function () {
         return false;
       }
     },
+    changeUser: function (usr) {
+     user = usr;
+    },
   };
 })();
 
@@ -405,12 +407,21 @@ const module = (function () {
 //   )
 // );
 
-// console.log(module.editTweet('19', 'fffff'));
+// console.log(module.editTweet('19', 'hello world'));
 
 // console.log(module.removeTweet('19'));
 
 // console.log(module.validateComment(20));
 
-console.log(module.addComment('20', 'hello world'));
+// console.log(module.addComment('20', 'hello world'));
+
+ console.log(module.changeUser('Nicholas Fury'));
+ console.log(
+  module.addTweet(
+    'Человек может всё, когда он понимает, что он — часть чего-то большего.'
+  )
+);
 
 console.log(tweets);
+
+
