@@ -6,13 +6,13 @@ const tweets = [
     author: 'Tony Stark',
     comments: [
       {
-        id: '11',
+        id: '101',
         text: 'Да. Парень в бронированном костюме. А снять — кто ты без него?',
         createdAt: new Date('2022-03-09T14:22:05'),
         author: 'Captain America',
       },
       {
-        id: '12',
+        id: '102',
         text: 'Гений, миллиардер, плэйбой, филантроп!',
         createdAt: new Date('2022-03-09T14:24:00'),
         author: 'Tony Stark',
@@ -33,13 +33,13 @@ const tweets = [
     author: 'Peter Parker',
     comments: [
       {
-        id: '31',
+        id: '103',
         text: 'Главное, не делай глупостей, договорились?',
         createdAt: new Date('2022-03-10T09:00:05'),
         author: 'Tony Stark',
       },
       {
-        id: '32',
+        id: '104',
         text: 'Привет!',
         createdAt: new Date('2022-03-10T09:00:25'),
         author: 'Black Widow',
@@ -60,7 +60,7 @@ const tweets = [
     author: 'Halk',
     comments: [
       {
-        id: '51',
+        id: '105',
         text: 'Эй, малыш, скоро солнце зайдет! #calm',
         createdAt: new Date('2022-03-12T11:15:25'),
         author: 'Black Widow',
@@ -88,7 +88,7 @@ const tweets = [
     author: 'Venom',
     comments: [
       {
-        id: '81',
+        id: '106',
         text: 'Даже я веду себя приличнее!',
         createdAt: new Date('2022-03-02T17:45:00'),
         author: 'Deadpool',
@@ -102,7 +102,7 @@ const tweets = [
     author: 'Wolverine',
     comments: [
       {
-        id: '91',
+        id: '107',
         text: 'Ты на кого намекаешь??',
         createdAt: new Date('2022-03-13T08:23:00'),
         author: 'Loki',
@@ -116,7 +116,7 @@ const tweets = [
     author: 'Black Widow',
     comments: [
       {
-        id: '101',
+        id: '108',
         text: 'Это я еще не шутил))',
         createdAt: new Date('2022-03-07T15:02:00'),
         author: 'Deadpool',
@@ -130,7 +130,7 @@ const tweets = [
     author: 'Groot',
     comments: [
       {
-        id: '111',
+        id: '109',
         text: 'Я Есть Стив Роджерс)',
         createdAt: new Date('2022-03-09T15:12:00'),
         author: 'Deadpool',
@@ -144,7 +144,7 @@ const tweets = [
     author: 'Bucky Barnes',
     comments: [
       {
-        id: '121',
+        id: '110',
         text: 'Не наделаю — все глупости останутся с тобой.',
         createdAt: new Date('2022-02-25T08:02:00'),
         author: 'Captain America',
@@ -158,7 +158,7 @@ const tweets = [
     author: 'Captain America',
     comments: [
       {
-        id: '131',
+        id: '111',
         text: 'Что так много?',
         createdAt: new Date('2022-02-24T14:48:00'),
         author: 'Tony Stark',
@@ -172,7 +172,7 @@ const tweets = [
     author: 'Daredevil',
     comments: [
       {
-        id: '141',
+        id: '112',
         text: 'Тонко)',
         createdAt: new Date('2022-03-10T12:25:00'),
         author: 'Black Widow',
@@ -186,7 +186,7 @@ const tweets = [
     author: 'Deadpool',
     comments: [
       {
-        id: '151',
+        id: '113',
         text: 'Ничего не перепутал?)',
         createdAt: new Date('2022-03-15T11:38:12'),
         author: 'Black Widow',
@@ -207,13 +207,13 @@ const tweets = [
     author: 'Loki',
     comments: [
       {
-        id: '171',
+        id: '114',
         text: 'С мужиками такое случается!',
         createdAt: new Date('2022-02-05T23:08:00'),
         author: 'Tony Stark',
       },
       {
-        id: '172',
+        id: '115',
         text: 'Lol',
         createdAt: new Date('2022-03-05T23:18:00'),
         author: 'Black Widow',
@@ -227,7 +227,7 @@ const tweets = [
     author: 'Mysterio',
     comments: [
       {
-        id: '181',
+        id: '116',
         text: 'Больше ты меня не проведешь!!!',
         createdAt: new Date('2022-03-06T15:42:50'),
         author: 'Peter Parker',
@@ -248,7 +248,7 @@ const tweets = [
     author: 'Hawkeye',
     comments: [
       {
-        id: '201',
+        id: '117',
         text: 'У нас был план???',
         createdAt: new Date('2022-02-09T17:00:00'),
         author: 'Black Widow',
@@ -288,6 +288,16 @@ const module = (function () {
     }
   }
 
+  function getRandomInt(object, array, min, max) {
+    let num = Math.floor(Math.random() * (max - min + 1)) + min;
+    num = String(num);
+    if (array.includes(num)) {
+      getRandomInt(object, array, min, max);
+    } else {
+      return (object.id = num);
+    }
+  }
+
   return {
     getTweets: function (skip = 0, top = 10, filterConfig = null) {
       const sortTweets = tweets
@@ -316,16 +326,7 @@ const module = (function () {
       const obj = new Object();
       const arrId = [];
       tweets.forEach((el) => arrId.push(el.id));
-      function getRandomInt() {
-        let num = Math.floor(1 + Math.random() * 1000);
-        num = String(num);
-        if (arrId.includes(num)) {
-          getRandomInt();
-        } else {
-          obj.id = num;
-        }
-      }
-      getRandomInt();
+      getRandomInt(obj, arrId, 1, 100);
       obj.text = text;
       obj.createdAt = new Date();
       obj.author = user;
@@ -370,6 +371,25 @@ const module = (function () {
         return false;
       }
     },
+    addComment: function (id, text) {
+      const obj = this.getTweet(id);
+      const objCom = new Object();
+      const arrId = [];
+      tweets.forEach((el) =>
+        el.comments.forEach((elem) => arrId.push(elem.id))
+      );
+      getRandomInt(objCom, arrId, 101, 200);
+      objCom.text = text;
+      objCom.createdAt = new Date();
+      objCom.author = user;
+      obj.comments.push(objCom);
+      const arr = Object.keys(objCom);
+      if (validateComm(arr, objCom)) {
+        return true;
+      } else {
+        return false;
+      }
+    },
   };
 })();
 
@@ -389,6 +409,8 @@ const module = (function () {
 
 // console.log(module.removeTweet('19'));
 
-console.log(module.validateComment(20));
+// console.log(module.validateComment(20));
+
+console.log(module.addComment('20', 'hello world'));
 
 console.log(tweets);
