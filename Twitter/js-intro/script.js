@@ -259,7 +259,7 @@ const tweets = [
 
 const module = (function () {
   let user = 'Hawkeye';
-  function validate(arr, val) {
+  function validateComm(arr, val) {
     if (
       arr.includes('id') &&
       val.id.length > 0 &&
@@ -274,6 +274,14 @@ const module = (function () {
       typeof val.author === 'string'
     ) {
       return true;
+    } else {
+      return false;
+    }
+  }
+
+  function validate(arr, val) {
+    if (arr.includes('comments') && Array.isArray(val.comments)) {
+      return validateComm(arr, val);
     } else {
       return false;
     }
@@ -302,12 +310,7 @@ const module = (function () {
       const val = tweets[tw - 1];
       const arr = Object.keys(val);
       console.log(val);
-
-      if (arr.includes('comments') && Array.isArray(val.comments)) {
-        return validate(arr, val);
-      } else {
-        return false;
-      }
+      return validate(arr, val);
     },
     addTweet: function (text) {
       let twitsLength = tweets.length;
@@ -373,10 +376,9 @@ const module = (function () {
 
 console.log(module.validateTweet(20));
 
-// module.addTweet(
+// console.log(module.addTweet(
 //   'Человек может всё, когда он понимает, что он — часть чего-то большего.'
-// );
-// console.log(tweets);
+// ));
 
 // module.editTweet('20', 'hi');
 
