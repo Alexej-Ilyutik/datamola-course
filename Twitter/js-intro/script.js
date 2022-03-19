@@ -259,7 +259,7 @@ const tweets = [
 
 const module = (function () {
   // let user = 'Nicholas Fury';
-  let user = 'Hawkeye';
+  let user = 'Captain Marvel';
   function validateComm(arr, val) {
     if (
       arr.includes('id') &&
@@ -355,12 +355,11 @@ const module = (function () {
     removeTweet: function (id) {
       const obj = this.getTweet(id);
       if (obj.author === user) {
-        tweets.splice(id - 1);
-        console.log(true);
+        tweets.splice(tweets.indexOf(obj), 1);
+        return true;
       } else {
-        console.log(false);
+        return false;
       }
-      console.log(tweets);
     },
     // validateComment: function (com) {
     //   let val = tweets[com - 1].comments;
@@ -385,8 +384,8 @@ const module = (function () {
 //   )
 // );
 
-console.log(module.editTweet('20', 'fffff'));
+// console.log(module.editTweet('19', 'fffff'));
 
-// module.removeTweet('20');
+console.log(module.removeTweet('19'));
 
 // module.validateComment(18);
