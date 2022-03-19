@@ -361,14 +361,15 @@ const module = (function () {
         return false;
       }
     },
-    // validateComment: function (com) {
-    //   let val = tweets[com - 1].comments;
-    //   if(val.length>0){
-    //     let arr = Object.keys(val[0]);
-    //     validate(arr, val);
-    //   }
-
-    // },
+    validateComment: function (com) {
+      const val = tweets[com - 1].comments[0];
+      const arr = Object.keys(val);
+      if (validateComm(arr, val)) {
+        return true;
+      } else {
+        return false;
+      }
+    },
   };
 })();
 
@@ -386,6 +387,8 @@ const module = (function () {
 
 // console.log(module.editTweet('19', 'fffff'));
 
-console.log(module.removeTweet('19'));
+// console.log(module.removeTweet('19'));
 
-// module.validateComment(18);
+console.log(module.validateComment(20));
+
+console.log(tweets);
