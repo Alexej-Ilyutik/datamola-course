@@ -1,50 +1,14 @@
 import General from './General.js';
 import Tweet from './Tweet.js';
 
-const tweet = new General('5', 'hello', '05.05.2022', "i'm");
+const tweets = [];
+const tweet1 = new General('5', 'hello', '05.05.2022', "i'm");
+const tweet2 = new Tweet('7', 'h', '12.03.2022', 'To');
+tweets.push(tweet1, tweet2);
 
-console.log(tweet);
+tweet2.addComment('88', 'Thunder and lightning');
+tweet2.addComment('100', 'Thunder only');
 
+console.log(tweets);
 
-const tweet2 = new Tweet('8', 'hi', '12.03.2022', 'He', ['fff']);
-console.log(tweet2);
-
-// class Tweet {
-//   constructor(id, text, createdAt, author) {
-//     this._id = id;
-//     this.text = text;
-//     this.createAt = new Date(createdAt);
-//     this.author = author;
-//   }
-
-//   static maxTextLength = 280;
-
-//   static validate(tweet) {
-//     if (tweet) {
-//       return true;
-//     }
-//     return false;
-//   }
-
-//   setText(newText) {
-//     if (typeof newText === 'string' && newText.length < Tweet.maxTextLength) {
-//       this.text = newText;
-//     }
-//   }
-
-//   get id() {
-//     return this._id;
-//   }
-
-//   set id(id) {
-//     console.log('can not change', id);
-//     return;
-//     // console.log("set", id);
-//     // this._id = id;
-//   }
-// }
-
-// const tweet = new Tweet('5', 'hello', '05.05.2022', "i'm");
-// console.log(tweet);
-
-// console.log(Tweet.validate(tweet));
+console.log(Tweet.validate(tweet2));

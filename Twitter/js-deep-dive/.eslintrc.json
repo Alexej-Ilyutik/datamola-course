@@ -11,6 +11,8 @@
   "rules": {
     "linebreak-style": ["error", "windows"],
     "no-underscore-dangle": ["error", { "allowAfterThis": true }],
-    "import/extensions": ["error", "never", { "js": "always" }]
+    "import/extensions": ["error", "never", { "js": "always" }],
+    "no-param-reassign": ["error", { "props": false }],
+    "operator-linebreak": ["error", "after", { "overrides": { "&&": "ignore", "=>": "ignore" } }]
   }
 }
