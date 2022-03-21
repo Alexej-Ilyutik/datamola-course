@@ -372,8 +372,8 @@ const module = (function () {
       if (obj.author !== user) {
         return false;
       } else {
-        obj.text = text;
-        if (this.validateTweet(tweets.indexOf(obj) + 1)) {
+        if (this.validateTweet(obj)) {
+          obj.text = text;
           return true;
         }
         return false;
@@ -447,13 +447,13 @@ const module = (function () {
 //   })
 // );
 
-console.log(
-  module.addTweet(
-    'Человек может всё, когда он понимает, что он — часть чего-то большего.'
-  )
-);
+// console.log(
+//   module.addTweet(
+//     'Человек может всё, когда он понимает, что он — часть чего-то большего.'
+//   )
+// );
 
-// console.log(module.editTweet('19', 'hello world'));
+console.log(module.editTweet('19', 'hello world'));
 
 // console.log(module.removeTweet('19'));
 
