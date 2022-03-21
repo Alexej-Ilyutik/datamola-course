@@ -8,6 +8,8 @@ export default class General {
 
   static maxTextLength = 280;
 
+  static _user = 'Tony Stark';
+
   set id(id) {
     this._id = id;
     throw new Error(`id = ${id} cannot be changed`);
@@ -56,7 +58,7 @@ export default class General {
     return object;
   }
 
-  static validateGeneral(twGneral) {
+  static _validateGeneral(twGneral) {
     if (
       twGneral.id &&
       twGneral.id.length > 0 &&
@@ -75,4 +77,6 @@ export default class General {
     }
     return false;
   }
+
+  
 }

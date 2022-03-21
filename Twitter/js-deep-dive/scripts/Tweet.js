@@ -14,7 +14,7 @@ export default class Tweet extends General {
     obj.id = id;
     obj.text = text;
     obj.createdAt = new Date();
-    obj.author = this._author;
+    obj.author = General._user;
     this.comments.push(obj);
     if (this.comments) {
       return true;
@@ -24,7 +24,7 @@ export default class Tweet extends General {
 
   static validate(tw) {
     if (tw.comments && Array.isArray(tw.comments)) {
-      return super.validateGeneral(tw);
+      return super._validateGeneral(tw);
     }
     return false;
   }

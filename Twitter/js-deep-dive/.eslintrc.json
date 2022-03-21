@@ -10,7 +10,10 @@
   },
   "rules": {
     "linebreak-style": ["error", "windows"],
-    "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+    "no-underscore-dangle": [
+      "error",
+      { "allow": [{ "allowAfterThis": true }, { "allowAfterGeneral": true }] }
+    ],
     "import/extensions": ["error", "never", { "js": "always" }],
     "no-param-reassign": ["error", { "props": false }],
     "operator-linebreak": [
