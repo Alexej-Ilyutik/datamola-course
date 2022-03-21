@@ -282,9 +282,8 @@ const module = (function () {
   function validate(arr, val) {
     if (arr.includes('comments') && Array.isArray(val.comments)) {
       return validateComm(arr, val);
-    } 
-      return false;
-    
+    }
+    return false;
   }
 
   function getRandomInt(object, array, min, max) {
@@ -361,9 +360,8 @@ const module = (function () {
       obj.createdAt = new Date();
       obj.author = user;
       obj.comments = [];
-      tweets.push(obj);
-
-      if (this.validateTweet(tweets.length)) {
+      if (this.validateTweet(obj)) {
+        tweets.push(obj);
         return true;
       }
       return false;
@@ -449,11 +447,11 @@ const module = (function () {
 //   })
 // );
 
-// console.log(
-//   module.addTweet(
-//     'Человек может всё, когда он понимает, что он — часть чего-то большего.'
-//   )
-// );
+console.log(
+  module.addTweet(
+    'Человек может всё, когда он понимает, что он — часть чего-то большего.'
+  )
+);
 
 // console.log(module.editTweet('19', 'hello world'));
 
