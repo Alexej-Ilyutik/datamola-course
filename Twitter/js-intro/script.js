@@ -388,13 +388,11 @@ const module = (function () {
       return false;
     },
     validateComment: function (com) {
-      const val = tweets[com - 1].comments[0];
-      const arr = Object.keys(val);
-      if (validateComm(arr, val)) {
+      const arr = Object.keys(com);
+      if (validateComm(arr, com)) {
         return true;
-      } else {
-        return false;
       }
+      return false;
     },
     addComment: function (id, text) {
       const obj = this.getTweet(id);
@@ -453,11 +451,18 @@ const module = (function () {
 //   )
 // );
 
-console.log(module.editTweet('19', 'hello world'));
+// console.log(module.editTweet('19', 'hello world'));
 
 // console.log(module.removeTweet('19'));
 
-// console.log(module.validateComment(20));
+console.log(
+  module.validateComment({
+    id: '114',
+    text: 'С мужиками такое случается!',
+    createdAt: new Date('2022-02-05T23:08:00'),
+    author: 'Tony Stark',
+  })
+);
 
 // console.log(module.addComment('20', 'hello world'));
 
