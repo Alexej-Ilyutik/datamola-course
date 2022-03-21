@@ -1,10 +1,9 @@
 import { tweets } from './tweets.js';
 import General from './General.js';
+import Tweet from './Tweet.js';
 
 export default class TweetFeed {
-
   _getPage(skip = 0, top = 10, filterConfig = null) {
-
     function sortTweets(skp, tp, twts) {
       return twts
         .slice()
@@ -53,18 +52,19 @@ export default class TweetFeed {
     return tweets.find((el) => el.id === id);
   }
 
-  // getRandomInt(object, array, min, max) {
-  //   this.object = object;
-  //   this.array = array;
-  //   this.min = min;
-  //   this.max = max;
-  //   let num = Math.floor(Math.random() * (max - min + 1)) + min;
-  //   num = String(num);
-  //   if (array.includes(num)) {
-  //     this.getRandomInt(object, array, min, max);
-  //   } else {
-  //     object.id = num;
-  //   }
-  //   return object;
-  // }
+  _add(text) {
+    const obj = {};
+    obj.id = String(Math.floor(Math.random() * (1000 - 25 + 1)) + 25);
+    obj.text = text;
+    obj.createdAt = new Date();
+    obj.author = General._user;
+    obj.comments = [];
+    if (Tweet.validate(obj)) {
+      tweets.push(obj);
+      return true;
+    }else{
+      return false;
+    }
+    
+  }
 }

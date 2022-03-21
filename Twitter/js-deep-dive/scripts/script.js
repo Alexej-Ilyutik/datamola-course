@@ -32,7 +32,9 @@ tweets.push(tweet1, tweet2);
 //   tweetFeed._getPage(0, 5)
 // );
 
-console.log(tweetFeed._get('5'));
+// console.log(tweetFeed._add('Yeeeees'));
+
+console.log(tweetFeed._add('Yeeeees'));
 
 console.log(tweets);
 
