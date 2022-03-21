@@ -1,29 +1,50 @@
 import { tweets } from './tweets.js';
 
 export default class TweetFeed {
+
   getPage(skip = 0, top = 10, filterConfig = null) {
-    // this.skip=skip;
-    // this.top=top;
-    // this.filterConfig=filterConfig;
+
+    function sortTweets(skp, tp, twts) {
+      return twts
+        .slice()
+        .sort((a, b) => b.createdAt - a.createdAt)
+        .slice(skp, skp + tp);
+    }
+
     if (filterConfig === null) {
-      return tweets;
+      return sortTweets(skip, top, tweets);
     } else {
-      // const arr = tweets.filter((el) =>
-      //   Object.keys(filterConfig).every((key) =>
-      //     el[key].toLowerCase().includes(filterConfig[key].toLowerCase())
-      //   )
-      // );
+      let filteredTweets = tweets.slice();
 
-      // const newArr = arr.filter((el) =>
-      //   Object.keys(filterConfig).every((key) => el[key] === filterConfig[key])
-      // );
-      // return arr.filter((el) =>
-      //   Object.keys(filterConfig).every((key) => el[key] === filterConfig[key])
-      // );
+      Object.keys(filterConfig).forEach((key) => {
+        if (key === 'author') {
+          filteredTweets = filteredTweets.filter((tweet) =>
+            tweet.author.toLowerCase().includes(filterConfig[key].toLowerCase())
+          );
+        }
+        if (key === 'text') {
+          filteredTweets = filteredTweets.filter((tweet) =>
+            tweet.text.toLowerCase().includes(filterConfig[key].toLowerCase())
+          );
+        }
+        if (key === 'dateFrom') {
+          filteredTweets = filteredTweets.filter(
+            (tweet) => tweet.createdAt >= filterConfig[key]
+          );
+        }
+        if (key === 'dateTo') {
+          filteredTweets = filteredTweets.filter(
+            (tweet) => tweet.createdAt >= filterConfig[key]
+          );
+        }
+        if (key === 'hashtags') {
+          filteredTweets = filteredTweets.filter((tweet) =>
+            tweet.text.toLowerCase().includes(filterConfig[key].toLowerCase())
+          );
+        }
+      });
 
-      return tweets.filter((el) =>
-        Object.keys(filterConfig).every((key) => el[key] == filterConfig[key])
-      );
+      return sortTweets(skip, top, filteredTweets);
     }
   }
 
