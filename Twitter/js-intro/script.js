@@ -405,13 +405,12 @@ const module = (function () {
       objCom.text = text;
       objCom.createdAt = new Date();
       objCom.author = user;
-      obj.comments.push(objCom);
       const arr = Object.keys(objCom);
       if (validateComm(arr, objCom)) {
+        obj.comments.push(objCom);
         return true;
-      } else {
-        return false;
       }
+      return false;
     },
     changeUser: function (usr) {
       user = usr;
@@ -455,14 +454,14 @@ const module = (function () {
 
 // console.log(module.removeTweet('19'));
 
-console.log(
-  module.validateComment({
-    id: '114',
-    text: 'С мужиками такое случается!',
-    createdAt: new Date('2022-02-05T23:08:00'),
-    author: 'Tony Stark',
-  })
-);
+// console.log(
+//   module.validateComment({
+//     id: '114',
+//     text: 'С мужиками такое случается!',
+//     createdAt: new Date('2022-02-05T23:08:00'),
+//     author: 'Tony Stark',
+//   })
+// );
 
 // console.log(module.addComment('20', 'hello world'));
 
@@ -473,4 +472,4 @@ console.log(
 //   )
 // );
 
-console.log(tweets);
+// console.log(tweets);
