@@ -297,22 +297,54 @@ const module = (function () {
     }
   }
 
+  function sortTweets(sk, tp, tweets) {
+    return tweets
+      .slice()
+      .sort((a, b) => b.createdAt - a.createdAt)
+      .slice(sk, sk + tp);
+  }
+
   return {
     getTweets: function (skip = 0, top = 10, filterConfig = null) {
-      const sortTweets = tweets
-        .slice()
-        .sort((a, b) => b.createdAt - a.createdAt)
-        .slice(skip, skip + top);
       if (filterConfig === null) {
-        return sortTweets;
+        return sortTweets(skip, top);
       } else {
-        return sortTweets.filter((el) =>
-          Object.keys(filterConfig).every((key) =>
-            el[key].includes(filterConfig[key])
-          )
-        );
+        let filteredTweets = tweets.slice();
+
+        Object.keys(filterConfig).forEach((key) => {
+          if (key === 'author') {
+            filteredTweets = filteredTweets.filter((tweet) =>
+              tweet.author
+                .toLowerCase()
+                .includes(filterConfig[key].toLowerCase())
+            );
+          }
+          if (key === 'text') {
+            filteredTweets = filteredTweets.filter((tweet) =>
+              tweet.text.toLowerCase().includes(filterConfig[key].toLowerCase())
+            );
+          }
+          if (key === 'dateFrom') {
+            filteredTweets = filteredTweets.filter(
+              (tweet) => tweet.createdAt >= filterConfig[key]
+            );
+          }
+          if (key === 'dateTo') {
+            filteredTweets = filteredTweets.filter(
+              (tweet) => tweet.createdAt >= filterConfig[key]
+            );
+          }
+          if (key === 'hashtags') {
+            filteredTweets = filteredTweets.filter((tweet) =>
+              tweet.text.toLowerCase().includes(filterConfig[key].toLowerCase())
+            );
+          }
+        });
+
+        return sortTweets(skip, top, filteredTweets);
       }
     },
+
     getTweet: function (id) {
       return tweets.find((el) => el.id === id);
     },
@@ -390,12 +422,24 @@ const module = (function () {
       }
     },
     changeUser: function (usr) {
-     user = usr;
+      user = usr;
     },
   };
 })();
 
-// console.log(module.getTweets(1, 3, { author: 'Halk' }));
+// console.log(
+//   module.getTweets(0, 20, {
+//     text: 'я',
+//     dateFrom: new Date('2022-03-09T16:00:01'),
+//     hashtags: 'power',
+//   })
+// );
+
+console.log(
+  module.getTweets(2, 4, {
+    text: 'я',
+  })
+);
 
 // console.log(module.getTweet('5'));
 
@@ -415,13 +459,11 @@ const module = (function () {
 
 // console.log(module.addComment('20', 'hello world'));
 
- console.log(module.changeUser('Nicholas Fury'));
- console.log(
-  module.addTweet(
-    'Человек может всё, когда он понимает, что он — часть чего-то большего.'
-  )
-);
+// console.log(module.changeUser('Nicholas Fury'));
+// console.log(
+//   module.addTweet(
+//     'Человек может всё, когда он понимает, что он — часть чего-то большего.'
+//   )
+// );
 
 console.log(tweets);
-
-
