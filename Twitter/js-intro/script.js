@@ -282,9 +282,9 @@ const module = (function () {
   function validate(arr, val) {
     if (arr.includes('comments') && Array.isArray(val.comments)) {
       return validateComm(arr, val);
-    } else {
+    } 
       return false;
-    }
+    
   }
 
   function getRandomInt(object, array, min, max) {
@@ -349,9 +349,8 @@ const module = (function () {
       return tweets.find((el) => el.id === id);
     },
     validateTweet: function (tw) {
-      const val = tweets[tw - 1];
-      const arr = Object.keys(val);
-      return validate(arr, val);
+      const arr = Object.keys(tw);
+      return validate(arr, tw);
     },
     addTweet: function (text) {
       const obj = new Object();
@@ -366,9 +365,8 @@ const module = (function () {
 
       if (this.validateTweet(tweets.length)) {
         return true;
-      } else {
-        return false;
       }
+      return false;
     },
 
     editTweet: function (id, text) {
@@ -379,9 +377,8 @@ const module = (function () {
         obj.text = text;
         if (this.validateTweet(tweets.indexOf(obj) + 1)) {
           return true;
-        } else {
-          return false;
         }
+        return false;
       }
     },
     removeTweet: function (id) {
@@ -389,9 +386,8 @@ const module = (function () {
       if (obj.author === user) {
         tweets.splice(tweets.indexOf(obj), 1);
         return true;
-      } else {
-        return false;
       }
+      return false;
     },
     validateComment: function (com) {
       const val = tweets[com - 1].comments[0];
@@ -435,15 +431,23 @@ const module = (function () {
 //   })
 // );
 
-console.log(
-  module.getTweets(2, 4, {
-    text: 'я',
-  })
-);
+// console.log(
+//   module.getTweets(2, 4, {
+//     text: 'я',
+//   })
+// );
 
 // console.log(module.getTweet('5'));
 
-// console.log(module.validateTweet(20));
+// console.log(
+//   module.validateTweet({
+//     id: '7',
+//     text: 'Заявляю как человек, который тебя любил: у тебя жених — олень.',
+//     createdAt: new Date('2022-03-15T11:25:00'),
+//     author: 'Ant-Man',
+//     comments: [],
+//   })
+// );
 
 // console.log(
 //   module.addTweet(
