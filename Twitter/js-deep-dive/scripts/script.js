@@ -28,9 +28,11 @@ tweets.push(tweet1, tweet2);
 // });
 // console.log(pageOfTweets.getPage());
 
-console.log(
-  tweetFeed.getPage(0, 5)
-);
+// console.log(
+//   tweetFeed._getPage(0, 5)
+// );
+
+console.log(tweetFeed._get('5'));
 
 console.log(tweets);
 

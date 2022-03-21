@@ -1,8 +1,9 @@
 import { tweets } from './tweets.js';
+import General from './General.js';
 
 export default class TweetFeed {
 
-  getPage(skip = 0, top = 10, filterConfig = null) {
+  _getPage(skip = 0, top = 10, filterConfig = null) {
 
     function sortTweets(skp, tp, twts) {
       return twts
@@ -48,11 +49,9 @@ export default class TweetFeed {
     }
   }
 
-  // get(id, tweetsArr) {
-  //   this._id = id;
-  //   this.tweetsArr = tweetsArr;
-  //   return tweetsArr.find((el) => el.id === id);
-  // }
+  _get(id) {
+    return tweets.find((el) => el.id === id);
+  }
 
   // getRandomInt(object, array, min, max) {
   //   this.object = object;
