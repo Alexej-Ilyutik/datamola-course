@@ -3,7 +3,7 @@ import General from './General.js';
 import Tweet from './Tweet.js';
 
 export default class TweetFeed {
-  _getPage(skip = 0, top = 10, filterConfig = null) {
+  static _getPage(skip = 0, top = 10, filterConfig = null) {
     function sortTweets(skp, tp, twts) {
       return twts
         .slice()
@@ -13,46 +13,47 @@ export default class TweetFeed {
 
     if (filterConfig === null) {
       return sortTweets(skip, top, tweets);
-    } else {
-      let filteredTweets = tweets.slice();
-
-      Object.keys(filterConfig).forEach((key) => {
-        if (key === 'author') {
-          filteredTweets = filteredTweets.filter((tweet) =>
-            tweet.author.toLowerCase().includes(filterConfig[key].toLowerCase())
-          );
-        }
-        if (key === 'text') {
-          filteredTweets = filteredTweets.filter((tweet) =>
-            tweet.text.toLowerCase().includes(filterConfig[key].toLowerCase())
-          );
-        }
-        if (key === 'dateFrom') {
-          filteredTweets = filteredTweets.filter(
-            (tweet) => tweet.createdAt >= filterConfig[key]
-          );
-        }
-        if (key === 'dateTo') {
-          filteredTweets = filteredTweets.filter(
-            (tweet) => tweet.createdAt >= filterConfig[key]
-          );
-        }
-        if (key === 'hashtags') {
-          filteredTweets = filteredTweets.filter((tweet) =>
-            tweet.text.toLowerCase().includes(filterConfig[key].toLowerCase())
-          );
-        }
-      });
-
-      return sortTweets(skip, top, filteredTweets);
     }
+    let filteredTweets = tweets.slice();
+
+    Object.keys(filterConfig).forEach((key) => {
+      if (key === 'author') {
+        filteredTweets = filteredTweets.filter((tweet) => {
+          tweet.author.toLowerCase().includes(filterConfig[key].toLowerCase());
+          // return filteredTweets;
+        });
+      }
+      if (key === 'text') {
+        filteredTweets = filteredTweets.filter((tweet) => {
+          tweet.text.toLowerCase().includes(filterConfig[key].toLowerCase());
+          // return filteredTweets;
+        });
+      }
+      if (key === 'dateFrom') {
+        filteredTweets = filteredTweets.filter(
+          (tweet) => tweet.createdAt >= filterConfig[key]
+        );
+      }
+      if (key === 'dateTo') {
+        filteredTweets = filteredTweets.filter(
+          (tweet) => tweet.createdAt >= filterConfig[key]
+        );
+      }
+      if (key === 'hashtags') {
+        filteredTweets = filteredTweets.filter((tweet) => {
+          tweet.text.toLowerCase().includes(filterConfig[key].toLowerCase());
+        });
+      }
+    });
+
+    return sortTweets(skip, top, filteredTweets);
   }
 
-  _get(id) {
+  static _get(id) {
     return tweets.find((el) => el.id === id);
   }
 
-  _add(text) {
+  static _add(text) {
     const obj = {};
     obj.id = String(Math.floor(Math.random() * (1000 - 25 + 1)) + 25);
     obj.text = text;
@@ -62,9 +63,11 @@ export default class TweetFeed {
     if (Tweet.validate(obj)) {
       tweets.push(obj);
       return true;
-    }else{
-      return false;
     }
-    
+    return false;
   }
+
+  _edit(id, text) {}
+
+  var;
 }
