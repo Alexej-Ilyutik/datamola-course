@@ -1,7 +1,7 @@
 import General from './General.js';
 import Tweet from './Tweet.js';
 // import Comment from './Comment.js';
-import TweetFeed from './TweetFeed.js';
+// import TweetFeed from './TweetFeed.js';
 import tweets from './tweets.js';
 
 const tweet1 = new General('5', 'Привет', '05.05.2022', "i'm");
