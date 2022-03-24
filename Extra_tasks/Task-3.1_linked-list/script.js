@@ -1,6 +1,6 @@
 class Node {
   constructor(value) {
-    this.number = value;
+    this.value = value;
     this.next = null;
   }
 }
@@ -18,13 +18,12 @@ class List {
         return false;
       }
       let node = new Node(value);
-      let cur;
 
       if (i === 0) {
         node.next = this.head;
         this.head = node;
       } else if (i > 0) {
-        cur = this.head;
+        let cur = this.head;
         let prev = null;
         let index = 0;
         while (index < i) {
@@ -35,7 +34,7 @@ class List {
         prev.next = node;
         node.next = cur;
       } else {
-        cur = this.head;
+        let cur = this.head;
         while (cur.next) {
           cur = cur.next;
         }
@@ -62,14 +61,34 @@ class List {
         index++;
       }
       prev.next = cur.next;
-    }else{
+    } else {
       cur = this.head;
       while (cur.next !== this.length) {
         cur = cur.next;
       }
       cur.setNext(null);
-      this.length = cur
+      this.length = cur;
     }
     return true;
   }
+
+  print() {
+    let cur = this.head;
+    while (cur) {
+      console.log(cur.value);
+      cur = cur.next;
+    }
+  }
 }
+
+let x = { y: 5 };
+let x1 = { y1: 6 };
+
+const list = new List();
+
+function addEl() {
+  list.addNode(x);
+  list.print();
+}
+
+// addEl();
