@@ -39,6 +39,9 @@ tweets.push(tweet1, tweet2);
 
 // console.log(TweetFeed._addComment('1',"hahaha"));
 
+// console.log(TweetFeed._constructor(tweets));
+// console.log(tweets);
+
 console.log(TweetFeed._addAll(tweets));
 
 // console.log(tweets);

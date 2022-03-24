@@ -105,10 +105,20 @@ export default class TweetFeed {
     return map;
   }
 
-  // static _addAll(tws) {
-  //   const map = new Map(Object.entries(tws));
-  //   return map.get('0');
+  static _addAll(tws) {
+    const map = new Map();
+    const mapNotValidate = new Map();
+    tws.forEach((key, val) => {
+      if (Tweet.validate(key)) {
+        map.set(val, key);
+      } else {
+        mapNotValidate.set(val, key);
+      }
+    });
+    return mapNotValidate;
+  }
+
+  // static _clear() {
+  //   this._constructor().clear();
   // }
-
-
 }
