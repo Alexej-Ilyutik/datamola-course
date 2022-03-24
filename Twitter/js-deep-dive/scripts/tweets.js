@@ -1,4 +1,4 @@
-export const tweets = [
+const tweets = [
   {
     id: '1',
     text: 'Привет! Без обид, но я не работаю в команде. #best',
@@ -256,3 +256,5 @@ export const tweets = [
     ],
   },
 ];
+
+export default tweets;

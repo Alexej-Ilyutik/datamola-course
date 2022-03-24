@@ -1,4 +1,4 @@
-import { tweets } from './tweets.js';
+import tweets from './tweets.js';
 import General from './General.js';
 import Tweet from './Tweet.js';
 
@@ -18,16 +18,14 @@ export default class TweetFeed {
 
     Object.keys(filterConfig).forEach((key) => {
       if (key === 'author') {
-        filteredTweets = filteredTweets.filter((tweet) => {
-          tweet.author.toLowerCase().includes(filterConfig[key].toLowerCase());
-          // return filteredTweets;
-        });
+        filteredTweets = filteredTweets.filter((tweet) =>
+          tweet.author.toLowerCase().includes(filterConfig[key].toLowerCase())
+        );
       }
       if (key === 'text') {
-        filteredTweets = filteredTweets.filter((tweet) => {
-          tweet.text.toLowerCase().includes(filterConfig[key].toLowerCase());
-          // return filteredTweets;
-        });
+        filteredTweets = filteredTweets.filter((tweet) =>
+          tweet.text.toLowerCase().includes(filterConfig[key].toLowerCase())
+        );
       }
       if (key === 'dateFrom') {
         filteredTweets = filteredTweets.filter(
@@ -40,9 +38,9 @@ export default class TweetFeed {
         );
       }
       if (key === 'hashtags') {
-        filteredTweets = filteredTweets.filter((tweet) => {
-          tweet.text.toLowerCase().includes(filterConfig[key].toLowerCase());
-        });
+        filteredTweets = filteredTweets.filter((tweet) =>
+          tweet.text.toLowerCase().includes(filterConfig[key].toLowerCase())
+        );
       }
     });
 
@@ -67,7 +65,15 @@ export default class TweetFeed {
     return false;
   }
 
-  _edit(id, text) {}
-
-  var;
+  static _edit(id, text) {
+    const obj = this._get(id);
+    if (obj.author !== General._user) {
+      return false;
+    }
+    if (Tweet.validate(obj)) {
+      obj.text = text;
+      return true;
+    }
+    return false;
+  }
 }

@@ -7,21 +7,6 @@ export default class Tweet extends General {
     this.comments = [];
   }
 
-  // addComment(id, text) {
-  //   this.idCom = id;
-  //   this.textCom = text;
-  //   const obj = {};
-  //   obj.id = id;
-  //   obj.text = text;
-  //   obj.createdAt = new Date();
-  //   obj.author = General._user;
-  //   this.comments.push(obj);
-  //   if (this.comments) {
-  //     return true;
-  //   }
-  //   return false;
-  // }
-
   static validate(tw) {
     if (tw.comments && Array.isArray(tw.comments)) {
       return super._validateGeneral(tw);

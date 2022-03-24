@@ -2,7 +2,7 @@ import General from './General.js';
 import Tweet from './Tweet.js';
 import Comment from './Comment.js';
 import TweetFeed from './TweetFeed.js';
-import { tweets } from './tweets.js';
+import tweets from './tweets.js';
 
 const tweet1 = new General('5', 'Привет', '05.05.2022', "i'm");
 const tweet2 = new Tweet('7', 'hi', '12.03.2022', 'Tor');
@@ -20,16 +20,19 @@ tweets.push(tweet1, tweet2);
 
 // console.log('com: '+Comment.validate(comment1));
 
-console.log(
-  TweetFeed._getPage(1, 8, {
-    author: 'Tor',
-  })
-);
+// console.log(
+//   TweetFeed._getPage(0, 10, {
+//     author: 'Tor',
+//     text: 'сын'
+//   })
+// );
 
 // console.log(TweetFeed._getPage(0, 5));
 
-// console.log(TweetFeed._add('Yeeeees'));
+// console.log(TweetFeed._get('5'));
 
-// console.log(TweetFeed._add('Yeeeees'));
+//  console.log(TweetFeed._add('Yeeeees'));
+
+console.log(TweetFeed._edit('1', 'new text'));
 
 console.log(tweets);
