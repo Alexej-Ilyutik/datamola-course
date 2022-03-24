@@ -85,4 +85,18 @@ export default class TweetFeed {
     }
     return false;
   }
+
+  static _addComment(id, text) {
+    const obj = this._get(id);
+    const objCom = {};
+    objCom.id = String(Math.floor(Math.random() * (10000 - 100 + 1)) + 100);
+    objCom.text = text;
+    objCom.createdAt = new Date();
+    objCom.author = General._user;
+    if (General._validateGeneral(objCom)) {
+      obj.comments.push(objCom);
+      return true;
+    }
+    return false;
+  }
 }

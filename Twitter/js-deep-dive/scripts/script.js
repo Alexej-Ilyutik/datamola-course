@@ -35,6 +35,8 @@ tweets.push(tweet1, tweet2);
 
 // console.log(TweetFeed._edit('1', 'new text'));
 
-console.log(TweetFeed._remove('1'));
+// console.log(TweetFeed._remove('1'));
+
+console.log(TweetFeed._addComment('1',"hahaha"));
 
 console.log(tweets);

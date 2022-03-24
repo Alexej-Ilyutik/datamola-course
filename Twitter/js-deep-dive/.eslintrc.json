@@ -15,7 +15,7 @@
       {
         "allowAfterThis": true,
         "allowAfterSuper": true,
-        "allow": ["_getPage", "_get", "_user"]
+        "allow": ["_getPage", "_get", "_user", "_validateGeneral"]
       }
     ],
     "import/extensions": ["error", "never", { "js": "always" }],
