@@ -76,4 +76,13 @@ export default class TweetFeed {
     }
     return false;
   }
+
+  static _remove(id) {
+    const obj = this._get(id);
+    if (obj.author === General._user) {
+      tweets.splice(tweets.indexOf(obj), 1);
+      return true;
+    }
+    return false;
+  }
 }

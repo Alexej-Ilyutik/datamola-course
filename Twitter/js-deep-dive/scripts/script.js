@@ -33,6 +33,8 @@ tweets.push(tweet1, tweet2);
 
 //  console.log(TweetFeed._add('Yeeeees'));
 
-console.log(TweetFeed._edit('1', 'new text'));
+// console.log(TweetFeed._edit('1', 'new text'));
+
+console.log(TweetFeed._remove('1'));
 
 console.log(tweets);
