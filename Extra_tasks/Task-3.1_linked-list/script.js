@@ -45,4 +45,31 @@ class List {
       return true;
     }
   }
+
+  removeNode(i) {
+    if (i < 0 || i >= this.length || this.length === 1) {
+      return false;
+    }
+    let cur = this.head;
+    if (i === 0) {
+      this.head = cur.next;
+    } else if (i > 0) {
+      let prev = null;
+      let index = 0;
+      while (index < i) {
+        prev = cur;
+        cur = cur.next;
+        index++;
+      }
+      prev.next = cur.next;
+    }else{
+      cur = this.head;
+      while (cur.next !== this.length) {
+        cur = cur.next;
+      }
+      cur.setNext(null);
+      this.length = cur
+    }
+    return true;
+  }
 }
