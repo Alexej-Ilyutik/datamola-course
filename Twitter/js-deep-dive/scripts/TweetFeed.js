@@ -99,4 +99,16 @@ export default class TweetFeed {
     }
     return false;
   }
+
+  static _constructor(tws) {
+    const map = new Map(Object.entries(tws));
+    return map;
+  }
+
+  // static _addAll(tws) {
+  //   const map = new Map(Object.entries(tws));
+  //   return map.get('0');
+  // }
+
+
 }

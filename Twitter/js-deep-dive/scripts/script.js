@@ -1,12 +1,12 @@
 import General from './General.js';
 import Tweet from './Tweet.js';
-import Comment from './Comment.js';
+// import Comment from './Comment.js';
 import TweetFeed from './TweetFeed.js';
 import tweets from './tweets.js';
 
 const tweet1 = new General('5', 'Привет', '05.05.2022', "i'm");
 const tweet2 = new Tweet('7', 'hi', '12.03.2022', 'Tor');
-const comment1 = new Comment('15', 'привет мир', '16.03.2022', 'Venom');
+// const comment1 = new Comment('15', 'привет мир', '16.03.2022', 'Venom');
 
 tweets.push(tweet1, tweet2);
 
@@ -37,6 +37,8 @@ tweets.push(tweet1, tweet2);
 
 // console.log(TweetFeed._remove('1'));
 
-console.log(TweetFeed._addComment('1',"hahaha"));
+// console.log(TweetFeed._addComment('1',"hahaha"));
 
-console.log(tweets);
+console.log(TweetFeed._addAll(tweets));
+
+// console.log(tweets);
