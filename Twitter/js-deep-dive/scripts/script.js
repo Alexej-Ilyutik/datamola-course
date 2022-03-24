@@ -42,6 +42,12 @@ tweets.push(tweet1, tweet2);
 // console.log(TweetFeed._constructor(tweets));
 // console.log(tweets);
 
-console.log(TweetFeed._addAll(tweets));
+// console.log(TweetFeed._addAll(tweets));
 
-// console.log(tweets);
+// const collection = TweetFeed._constructor(tweets);
+
+// console.log(collection);
+
+// console.log(TweetFeed._clear(collection));
+
+// console.log(collection);

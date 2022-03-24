@@ -118,7 +118,7 @@ export default class TweetFeed {
     return mapNotValidate;
   }
 
-  // static _clear() {
-  //   this._constructor().clear();
-  // }
+  static _clear(tws) {
+    tws.clear();
+  }
 }
