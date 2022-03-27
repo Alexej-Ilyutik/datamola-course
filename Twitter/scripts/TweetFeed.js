@@ -1,9 +1,18 @@
-import tweets from './tweets.js';
 import General from './General.js';
 import Tweet from './Tweet.js';
 
 export default class TweetFeed {
-  static _getPage(skip = 0, top = 10, filterConfig = null) {
+  _tweets = [];
+
+  set tweets(_tweets) {
+    this._tweets = _tweets;
+  }
+
+  get tweets() {
+    return this._tweets;
+  }
+
+  getPage(skip = 0, top = 10, filterConfig = null) {
     function sortTweets(skp, tp, twts) {
       return twts
         .slice()
@@ -11,7 +20,7 @@ export default class TweetFeed {
         .slice(skp, skp + tp);
     }
 
-    if (filterConfig === null) {
+    if (filterConfig == null) {
       return sortTweets(skip, top, tweets);
     }
     let filteredTweets = tweets.slice();
@@ -47,11 +56,11 @@ export default class TweetFeed {
     return sortTweets(skip, top, filteredTweets);
   }
 
-  static _get(id) {
+  get(id) {
     return tweets.find((el) => el.id === id);
   }
 
-  static _add(text) {
+  add(text) {
     const obj = {};
     obj.id = String(Math.floor(Math.random() * (1000 - 25 + 1)) + 25);
     obj.text = text;
@@ -65,8 +74,8 @@ export default class TweetFeed {
     return false;
   }
 
-  static _edit(id, text) {
-    const obj = this._get(id);
+  edit(id, text) {
+    const obj = this.get(id);
     if (obj.author !== General._user) {
       return false;
     }
@@ -77,8 +86,8 @@ export default class TweetFeed {
     return false;
   }
 
-  static _remove(id) {
-    const obj = this._get(id);
+  remove(id) {
+    const obj = this.get(id);
     if (obj.author === General._user) {
       tweets.splice(tweets.indexOf(obj), 1);
       return true;
@@ -86,8 +95,8 @@ export default class TweetFeed {
     return false;
   }
 
-  static _addComment(id, text) {
-    const obj = this._get(id);
+  addComment(id, text) {
+    const obj = this.get(id);
     const objCom = {};
     objCom.id = String(Math.floor(Math.random() * (10000 - 100 + 1)) + 100);
     objCom.text = text;
@@ -100,25 +109,30 @@ export default class TweetFeed {
     return false;
   }
 
-  static _constructor(tws) {
-    const map = new Map(Object.entries(tws));
-    return map;
+  constructor(tws = []) {
+    this.tweets = tws;
   }
 
-  static _addAll(tws) {
-    const map = new Map();
-    const mapNotValidate = new Map();
-    tws.forEach((key, val) => {
-      if (Tweet.validate(key)) {
-        map.set(val, key);
+  addAll(tws) {
+    const mapNotValidate = [];
+    tws.forEach((val) => {
+      if (Tweet.validate(val)) {
+        const t = new Tweet(
+          val.id,
+          val.text,
+          val.createdAt,
+          val.author,
+          val.comments
+        );
+        this.tweets.push(t);
       } else {
-        mapNotValidate.set(val, key);
+        mapNotValidate.push(val);
       }
     });
     return mapNotValidate;
   }
 
-  static _clear(tws) {
-    tws.clear();
+  clear() {
+    this.tweets = [];
   }
 }

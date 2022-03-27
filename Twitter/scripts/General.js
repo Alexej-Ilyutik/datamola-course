@@ -11,8 +11,8 @@ export default class General {
   static _user = 'Tony Stark';
 
   set id(id) {
-    this._id = id;
-    throw new Error(`id = ${id} cannot be changed`);
+    // this._id = id;
+    // throw new Error(`id = ${id} cannot be changed`);
   }
 
   get id() {
@@ -20,8 +20,8 @@ export default class General {
   }
 
   set createdAt(createdAt) {
-    this._createdAt = createdAt;
-    throw new Error(`createdAt = ${createdAt} cannot be changed`);
+    // this._createdAt = createdAt;
+    // throw new Error(`createdAt = ${createdAt} cannot be changed`);
   }
 
   get createdAt() {
@@ -29,8 +29,8 @@ export default class General {
   }
 
   set author(author) {
-    this._author = author;
-    throw new Error(`author = ${author} cannot be changed`);
+    // this._author = author;
+    // throw new Error(`author = ${author} cannot be changed`);
   }
 
   get author() {
