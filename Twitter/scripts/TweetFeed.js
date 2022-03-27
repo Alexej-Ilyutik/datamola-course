@@ -1,11 +1,12 @@
 import General from './General.js';
 import Tweet from './Tweet.js';
+import Comment from './Comment.js';
 
 export default class TweetFeed {
   _tweets = [];
 
-  set tweets(_tweets) {
-    this._tweets = _tweets;
+  set tweets(tw) {
+    this._tweets = tw;
   }
 
   get tweets() {
@@ -21,9 +22,9 @@ export default class TweetFeed {
     }
 
     if (filterConfig == null) {
-      return sortTweets(skip, top, tweets);
+      return sortTweets(skip, top, this.tweets);
     }
-    let filteredTweets = tweets.slice();
+    let filteredTweets = this.tweets.slice();
 
     Object.keys(filterConfig).forEach((key) => {
       if (key === 'author') {
@@ -57,18 +58,18 @@ export default class TweetFeed {
   }
 
   get(id) {
-    return tweets.find((el) => el.id === id);
+    return this.tweets.find((el) => el.id === id);
   }
 
   add(text) {
-    const obj = {};
-    obj.id = String(Math.floor(Math.random() * (1000 - 25 + 1)) + 25);
-    obj.text = text;
-    obj.createdAt = new Date();
-    obj.author = General._user;
-    obj.comments = [];
-    if (Tweet.validate(obj)) {
-      tweets.push(obj);
+    const newTweet = new Tweet();
+    newTweet.id = String(Math.floor(Math.random() * (1000 - 25 + 1)) + 25);
+    newTweet.text = text;
+    newTweet.createdAt = new Date();
+    newTweet.author = General._user;
+    newTweet.comments = [];
+    if (Tweet.validate(newTweet)) {
+      this.tweets.push(newTweet);
       return true;
     }
     return false;
@@ -89,7 +90,7 @@ export default class TweetFeed {
   remove(id) {
     const obj = this.get(id);
     if (obj.author === General._user) {
-      tweets.splice(tweets.indexOf(obj), 1);
+      this.tweets.splice(obj, 1);
       return true;
     }
     return false;
@@ -97,20 +98,20 @@ export default class TweetFeed {
 
   addComment(id, text) {
     const obj = this.get(id);
-    const objCom = {};
-    objCom.id = String(Math.floor(Math.random() * (10000 - 100 + 1)) + 100);
-    objCom.text = text;
-    objCom.createdAt = new Date();
-    objCom.author = General._user;
-    if (General._validateGeneral(objCom)) {
-      obj.comments.push(objCom);
+    const newComment = new Comment();
+    newComment.id = String(Math.floor(Math.random() * (10000 - 100 + 1)) + 100);
+    newComment.text = text;
+    newComment.createdAt = new Date();
+    newComment.author = General._user;
+    if (Comment.validate(newComment)) {
+      obj.comments.push(newComment);
       return true;
     }
     return false;
   }
 
-  constructor(tws = []) {
-    this.tweets = tws;
+  constructor(tws) {
+    this.tweets = tws || [];
   }
 
   addAll(tws) {

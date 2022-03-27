@@ -1,55 +1,49 @@
-import General from './General.js';
 import Tweet from './Tweet.js';
-// import Comment from './Comment.js';
+import Comment from './Comment.js';
 import TweetFeed from './TweetFeed.js';
 import tweets from './tweets.js';
 
-const feed = new TweetFeed();
-feed.addAll(tweets);
-// const tweet1 = new General('5', 'Привет', '05.05.2022', "i'm");
-// const tweet2 = new Tweet('7', 'hi', '12.03.2022', 'Tor');
+const tweet1 = new Tweet('5', 'Привет', '05.05.2022', "I'm");
+console.log(tweet1);
+tweet1.author = '  AlExEj        ';
+console.log(tweet1);
+console.log('tw: ' + Tweet.validate(tweet1));
+
 // const comment1 = new Comment('15', 'привет мир', '16.03.2022', 'Venom');
+// console.log(comment1);
+// console.log('com: ' + Comment.validate(comment1));
 
-// tweets.push(tweet1, tweet2);
+// tweets.push(comment1);
+// console.log(tweets);
 
-// tweet2.addComment('88', 'Thunder and lightning');
-// tweet2.addComment('100', 'Thunder only');
+// const feed = new TweetFeed();
+// console.log(feed);
 
-console.log(feed.tweets);
-// console.log(tweet2.comments[0]);
-
-// console.log('tw: '+Tweet.validate(tweet2));
-
-// console.log('com: '+Comment.validate(comment1));
+// feed.addAll(tweets);
+// console.log(feed);
 
 // console.log(
-//   TweetFeed._getPage(0, 10, {
-//     author: 'Tor',
-//     text: 'сын'
+//   feed.getPage(0, 6, {
+//     text: 'Я',
 //   })
 // );
 
-// console.log(TweetFeed._getPage(0, 5));
+// console.log(feed.getPage(2, 5));
 
-// console.log(TweetFeed._get('5'));
+// console.log(feed.get('8'));
 
-//  console.log(TweetFeed._add('Yeeeees'));
+// console.log(feed.add('Yeeeees'));
+// console.log(feed);
 
-// console.log(TweetFeed._edit('1', 'new text'));
+// console.log(feed.edit('1', 'new text'));
+// console.log(feed);
 
-// console.log(TweetFeed._remove('1'));
+// console.log(feed.remove('1'));
+// console.log(feed);
 
-// console.log(TweetFeed._addComment('1',"hahaha"));
+// feed.addComment('2', 'hahaha');
+// feed.addComment('2', 'hehehe');
+// console.log(feed);
 
-// console.log(TweetFeed._constructor(tweets));
-// console.log(tweets);
-
-// console.log(TweetFeed._addAll(tweets));
-
-// const collection = TweetFeed._constructor(tweets);
-
-// console.log(collection);
-
-// console.log(TweetFeed._clear(collection));
-
-// console.log(collection);
+// feed.clear();
+// console.log(feed);
