@@ -75,6 +75,14 @@ class List {
     this.length--;
     return true;
   }
+
+  print() {
+    let cur = this.head;
+    while (cur) {
+      console.log(cur.value);
+      cur = cur.next;
+    }
+  }
 }
 
 const list = new List(35);
@@ -86,32 +94,8 @@ list.addNode(12, 3);
 list.addNode(7);
 // console.log(list.addNode(88));
 // console.log(list.removeNode(22));
-list.removeNode(4);
-list.removeNode();
-list.removeNode();
+list.removeNode(3);
+// list.removeNode();
 console.log(list);
-// console.log(list.addNode(2, 12));
 
-// class List {
-//
-
-//   print() {
-//     let cur = this.head;
-//     while (cur) {
-//       console.log(cur.value);
-//       cur = cur.next;
-//     }
-//   }
-// }
-
-// let x = { y: 5 };
-// let x1 = { y1: 6 };
-
-// const list = new List();
-
-// function addEl() {
-//   list.addNode(x);
-//   list.print();
-// }
-
-// addEl();
+list.print()
