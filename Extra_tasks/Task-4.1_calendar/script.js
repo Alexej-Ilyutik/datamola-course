@@ -1,7 +1,9 @@
 const calendar = document.getElementById('calendar');
 const elem = calendar.querySelector('.dates');
-let year = 2022;
-let month = 2;
+const info = calendar.querySelector('.info');
+let date = new Date();
+let year = date.getFullYear();
+let month = date.getMonth();
 
 function createCalendar(elem, year, month) {
   let arr = [];
@@ -14,15 +16,27 @@ function createCalendar(elem, year, month) {
 
   arr = createArr(firstDate, lastDate);
 
-  // arr = shiftElems(shiftElemsNum, arr);
-  console.log(arr);
-  // arr = pushElems(shiftElemsNum, arr);
-  // arr = chunkArr(7, arr);
+  arr = shiftElems(shiftElemsNum, ' ', arr);
 
-  // createTable(pushElemsNum, elem);
+  arr = pushElems(pushElemsNum, ' ', arr);
+
+  arr = chunkArr(7, arr);
+
+  createTable(arr, elem);
+  showInfo(year, month, info);
 }
 
-function createTable(arr, el) {}
+function createTable(arr, el) {
+  for (let i = 0; i < arr.length; i++) {
+    let tr = document.createElement('tr');
+    for (let j = 0; j < arr[i].length; j++) {
+      let td = document.createElement('td');
+      td.innerHTML = arr[i][j];
+      tr.appendChild(td);
+    }
+    el.appendChild(tr);
+  }
+}
 
 function createArr(from, to) {
   let arr = [];
@@ -34,11 +48,17 @@ function createArr(from, to) {
 
 function shiftElems(num, el, arr) {
   for (let i = 0; i < num; i++) {
-    arr.unshift();
+    arr.unshift(el);
   }
+  return arr;
 }
 
-function pushElems(num, arr) {}
+function pushElems(num, el, arr) {
+  for (let i = 0; i < num; i++) {
+    arr.push(el);
+  }
+  return arr;
+}
 
 function getLastDayOfMonth(year, month) {
   let date = new Date(year, month + 1, 0);
@@ -56,7 +76,14 @@ function getPushElemsNum(year, month) {
   return 7 - realDay;
 }
 
-function chunkArr(num, array) {}
+function chunkArr(num, array) {
+  let res = [];
+  while (array.length > 0) {
+    let chunk = array.splice(0, num);
+    res.push(chunk);
+  }
+  return res;
+}
 
 function getCurrentDay(num) {
   if (num === 0) {
@@ -73,6 +100,28 @@ function getFirstWeekDayOfMonth(year, month) {
 function getLastWeekDayOfMonth(year, month) {
   let date = new Date(year, month + 1, 0);
   return date.getDay();
+}
+
+function showInfo(year, month, el) {
+  el.innerHTML = getMonthName(month) + ' ' + year;
+}
+
+function getMonthName(num) {
+  const month = [
+    'Январь',
+    'Февраль',
+    'Март',
+    'Апрель',
+    'Май',
+    'Июнь',
+    'Июль',
+    'Август',
+    'Сентябрь',
+    'Октябрь',
+    'Ноябрь',
+    'Декабрь'
+  ];
+  return month[num]; 
 }
 
 createCalendar(elem, year, month);
