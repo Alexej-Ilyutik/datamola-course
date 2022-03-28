@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>CatChat main</title>
+    <link rel="icon" href="assets/svg/Logo.svg" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <figure class="logo">
+          <img src="assets/img/ava.jfif" alt="foto" />
+          <figcaption>Alexej Ilyutik</figcaption>
+        </figure>
+        <div class="header__button">
+          <button class="header__btn btn">
+            <img src="assets/svg/Exit.svg" alt="exit" />
+          </button>
+          <div class="header__button-description">Exit</div>
+        </div>
+      </header>
+      <main class="main">
+        <aside class="tools">
+          <button class="tools__btn btn">
+            <img src="assets/svg/New_twitt.svg" alt="new twitt" />
+          </button>
+          <form action="#popup">
+            <button class="tools__btn btn">
+              <img src="assets/svg/Search.svg" alt="search" />
+            </button>
+          </form>
+
+          <button class="tools__btn btn">
+            <img src="assets/svg/Contacts.svg" alt="contacts" />
+          </button>
+          <button class="tools__btn btn">
+            <img src="assets/svg/Settings.svg" alt="settings" />
+          </button>
+        </aside>
+        <article class="message">
+          <form class="message__input">
+            <textarea
+              name="text"
+              rows="3"
+              placeholder="Write a message..."
+            ></textarea>
+            <button><img src="assets/svg/send.svg" alt="send" /></button>
+          </form>
+          <div class="message__content content">
+            <div class="content__name secondary-text">alexej ilyutik</div>
+            <div class="content__container">
+              <div class="content__area">
+                <p class="content__text">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book.
+                </p>
+                <div class="content__hesh secondary-text">
+                  #course#front-end
+                </div>
+              </div>
+              <div class="content__settings">
+                <button class="content__btn">
+                  <img src="assets/svg/Change.svg" alt="change" />
+                </button>
+                <button class="content__btn">
+                  <img src="assets/svg/delete.svg" alt="delete" />
+                </button>
+              </div>
+            </div>
+            <div class="content__info">
+              <div class="info__retwitt">
+                <img src="assets/svg/arrow.svg" alt="arrow" />
+                <div class="secondary-text">15</div>
+              </div>
+              <div class="secondary-text">21:46 PM, 19 February 2022</div>
+            </div>
+          </div>
+          <div class="message__content second content">
+            <div class="content__name second secondary-text">tony stark</div>
+            <div class="content__container">
+              <div class="content__area second">
+                <p class="content__text">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </p>
+                <p class="content__text">
+                  Lorem Ipsum has been the industry's standard dummy text ever
+                  since the 1500s, when an unknown printer took a galley of type
+                  and scrambled it to make a type specimen book.It has survived
+                  not only five centuries, but also the leap into electronic
+                  typesetting, remaining essentially unchanged.
+                </p>
+                <div class="content__hesh secondary-text">#front-end</div>
+              </div>
+            </div>
+            <div class="content__info second">
+              <div class="info__retwitt">
+                <img src="assets/svg/arrow.svg" alt="arrow" />
+                <div class="secondary-text">167</div>
+              </div>
+              <div class="secondary-text">18:32 PM, 17 February 2022</div>
+            </div>
+          </div>
+          <div class="message__content second content">
+            <div class="content__name second secondary-text">
+              doctor strange
+            </div>
+            <div class="content__container">
+              <div class="content__area second">
+                <p class="content__text">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </p>
+                <p class="content__text">
+                  Lorem Ipsum has been the industry's standard dummy text ever
+                  since the 1500s, when an unknown printer took a galley of type
+                  and scrambled it to make a type specimen book.
+                </p>
+                <div class="content__hesh secondary-text">
+                  #front-end#back-end#in-the-middle-end
+                </div>
+              </div>
+            </div>
+            <div class="content__info second">
+              <div class="info__retwitt">
+                <img src="assets/svg/arrow.svg" alt="arrow" />
+                <div class="secondary-text">38</div>
+              </div>
+              <div class="secondary-text">14:38 PM, 17 February 2022</div>
+            </div>
+          </div>
+          <div class="message__content second content">
+            <div class="content__name second secondary-text">spider-man</div>
+            <div class="content__container">
+              <div class="content__area second">
+                <p class="content__text">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </p>
+                <div class="content__hesh secondary-text">#front-end</div>
+              </div>
+            </div>
+            <div class="content__info second">
+              <div class="info__retwitt">
+                <img src="assets/svg/arrow.svg" alt="arrow" />
+                <div class="secondary-text">16</div>
+              </div>
+              <div class="secondary-text">10:32 PM, 16 February 2022</div>
+            </div>
+          </div>
+          <div class="message__content second content">
+            <div class="content__name second secondary-text">tor</div>
+            <div class="content__container">
+              <div class="content__area second">
+                <p class="content__text">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </p>
+                <div class="content__hesh secondary-text">#front-end</div>
+              </div>
+            </div>
+            <div class="content__info second">
+              <div class="info__retwitt">
+                <img src="assets/svg/arrow.svg" alt="arrow" />
+                <div class="secondary-text">17</div>
+              </div>
+              <div class="secondary-text">18:32 PM, 14 February 2022</div>
+            </div>
+          </div>
+          <div class="message__content second content">
+            <div class="content__name second secondary-text">halk</div>
+            <div class="content__container">
+              <div class="content__area second">
+                <p class="content__text">
+                  Lorem Ipsum has been the industry's standard dummy text ever
+                  since the 1500s, when an unknown printer took a galley of type
+                  and scrambled it to make a type specimen book.
+                </p>
+                <div class="content__hesh secondary-text">#front-end</div>
+              </div>
+            </div>
+            <div class="content__info second">
+              <div class="info__retwitt">
+                <img src="assets/svg/arrow.svg" alt="arrow" />
+                <div class="secondary-text">23</div>
+              </div>
+              <div class="secondary-text">14:32 PM, 10 February 2022</div>
+            </div>
+          </div>
+          <div class="message__content second content">
+            <div class="content__name second secondary-text">black panther</div>
+            <div class="content__container">
+              <div class="content__area second">
+                <p class="content__text">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </p>
+                <div class="content__hesh secondary-text">#front-end</div>
+              </div>
+            </div>
+            <div class="content__info second">
+              <div class="info__retwitt">
+                <img src="assets/svg/arrow.svg" alt="arrow" />
+                <div class="secondary-text">16</div>
+              </div>
+              <div class="secondary-text">16:32 PM, 08 February 2022</div>
+            </div>
+          </div>
+          <div class="message__content second content">
+            <div class="content__name second secondary-text">ant-man</div>
+            <div class="content__container">
+              <div class="content__area second">
+                <p class="content__text">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </p>
+                <div class="content__hesh secondary-text">#front-end</div>
+              </div>
+            </div>
+            <div class="content__info second">
+              <div class="info__retwitt">
+                <img src="assets/svg/arrow.svg" alt="arrow" />
+                <div class="secondary-text">12</div>
+              </div>
+              <div class="secondary-text">18:32 PM, 25 January 2022</div>
+            </div>
+          </div>
+          <div class="message__content second content">
+            <div class="content__name second secondary-text">venom</div>
+            <div class="content__container">
+              <div class="content__area second">
+                <p class="content__text">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </p>
+                <div class="content__hesh secondary-text">#front-end</div>
+              </div>
+            </div>
+            <div class="content__info second">
+              <div class="info__retwitt">
+                <img src="assets/svg/arrow.svg" alt="arrow" />
+                <div class="secondary-text">17</div>
+              </div>
+              <div class="secondary-text">18:32 PM, 17 January 2022</div>
+            </div>
+          </div>
+          <div class="message__content second content">
+            <div class="content__name second secondary-text">wolverine</div>
+            <div class="content__container">
+              <div class="content__area second">
+                <p class="content__text">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </p>
+                <div class="content__hesh secondary-text">#front-end</div>
+              </div>
+            </div>
+            <div class="content__info second">
+              <div class="info__retwitt">
+                <img src="assets/svg/arrow.svg" alt="arrow" />
+                <div class="secondary-text">37</div>
+              </div>
+              <div class="secondary-text">18:32 PM, 10 January 2022</div>
+            </div>
+          </div>
+          <button class="message__btn btn">Show more...</button>
+          <div class="tools__popup" id="popup">
+            <a href="#" class="popup__area"></a>
+            <div class="popup__body">
+              <div class="popup__content">
+                <a href="#" class="popup__close">&times;</a>
+                <div class="popup__title">Filter:</div>
+                <form class="popup__choice choice" action="#">
+                  <div class="choice__name name box">
+                    <label class="name__label" for="name_id">by Name:</label>
+                    <input
+                      class="name__text"
+                      type="text"
+                      id="name_id"
+                      name="name_value"
+                      placeholder="input author name.."
+                    />
+                  </div>
+                  <div class="choice__date date box">
+                    <label class="date__label" for="date_id">by Date:</label>
+                    <input
+                      class="date__text"
+                      type="date"
+                      id="date_id"
+                      name="date_value"
+                    />
+                  </div>
+                  <div class="choice__content content box">
+                    <label class="content__label" for="content_id"
+                      >by Content:</label
+                    >
+                    <input
+                      class="content__value"
+                      type="text"
+                      id="content_id"
+                      name="content_value"
+                      placeholder="input text..."
+                    />
+                  </div>
+                  <div class="choice__hesh hesh box">
+                    <label class="hesh__label" for="hesh_id">by Hashtag:</label>
+                    <input
+                      class="hesh__text"
+                      type="text"
+                      id="hesh_id"
+                      name="hesh_value"
+                      placeholder="input heshtag..."
+                    />
+                  </div>
+                  <div class="choice__btns">
+                    <button class="choice__button btn">Apply</button> 
+                    <button type="reset" class="choice__button btn">Reset</button> 
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </article>
+        <div class="message__line"></div>
+      </main>
+      <footer class="footer">
+        <figure class="logo">
+          <img class="logo__cat" src="assets/svg/Logo_img.svg" alt="logo" />
+          <figcaption>CatChat</figcaption>
+        </figure>
+        <div class="footer__author">
+          <p>Alexej Ilyutik</p>
+          <p>alexej.ilyutik@gmail.com</p>
+        </div>
+        <div class="footer__date">
+          <div class="date-text">Date:</div>
+          <div class="date-date">28.02.2022</div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
