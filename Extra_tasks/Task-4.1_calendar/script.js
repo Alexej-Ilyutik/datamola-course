@@ -3,9 +3,15 @@ const elem = calendar.querySelector('.dates');
 const info = calendar.querySelector('.info');
 let date = new Date();
 let year = date.getFullYear();
-let month = date.getMonth();
+let month = date.getMonth() + 1;
 
 function createCalendar(elem, year, month) {
+  initialCalendar(elem, year, month - 1);
+}
+
+createCalendar(elem, 2012, 9);
+
+function initialCalendar(elem, year, month) {
   let arr = [];
   const firstDate = 1;
   let lastDate = getLastDayOfMonth(year, month);
@@ -119,9 +125,9 @@ function getMonthName(num) {
     'Сентябрь',
     'Октябрь',
     'Ноябрь',
-    'Декабрь'
+    'Декабрь',
   ];
-  return month[num]; 
+  return month[num];
 }
 
-createCalendar(elem, year, month);
+// initialCalendar(elem, year, month);
