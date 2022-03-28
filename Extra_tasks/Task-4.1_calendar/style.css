@@ -10,7 +10,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 500;
   scroll-behavior: smooth;
   color: var(--text-color);
@@ -40,7 +40,6 @@ body {
   padding-bottom: 15px;
 }
 
-
 .main {
   background-color: var(--bg-color);
   flex: 1 1 auto;
@@ -50,6 +49,28 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+#calendar {
+  margin: 0 auto;
+  overflow-x: auto;
+}
+#calendar td,
+#calendar th {
+  padding: 10px;
+  border: 2px solid var(--main-color);
+  text-align: center;
+}
+
+#calendar th {
+  font-weight: 700;
+}
+
+.info {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: var(--main-color);
 }
 
 .footer {
@@ -72,4 +93,9 @@ body {
 .footer__link img {
   background-color: inherit;
   width: 26px;
+}
+
+.footer__link a,
+.footer p {
+  font-size: 0.8rem;
 }
