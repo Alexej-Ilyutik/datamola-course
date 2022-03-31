@@ -1,14 +1,15 @@
 export default class General {
+
+  static maxTextLength = 280;
+
+  static _user = 'Tony Stark';
+
   constructor(id, text, createdAt, author) {
     this._id = id;
     this.text = text;
     this._createdAt = new Date(createdAt);
     this._author = author;
   }
-
-  static maxTextLength = 280;
-
-  static _user = 'Tony Stark';
 
   set id(id) {
     this._id = id;

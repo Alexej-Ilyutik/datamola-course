@@ -2,15 +2,22 @@ import Tweet from './Tweet.js';
 import Comment from './Comment.js';
 import TweetFeed from './TweetFeed.js';
 import tweets from './tweets.js';
+import General from './General.js';
 
 const tweet1 = new Tweet('5', 'Привет', '05.05.2022', "I'm");
+const tweet2 = new Tweet('4','Хай', '05.05.2022', "I'm");
+
+
 console.log(tweet1);
+console.log(tweet2);
+
+
 tweet1.author = '  AlExEj        ';
 console.log(tweet1);
 console.log('tw: ' + Tweet.validate(tweet1));
 
-// const comment1 = new Comment('15', 'привет мир', '16.03.2022', 'Venom');
-// console.log(comment1);
+const comment1 = new Comment('15', 'привет мир',  '03.16.2022', 'Venom');
+console.log(comment1);
 // console.log('com: ' + Comment.validate(comment1));
 
 // tweets.push(comment1);
@@ -21,6 +28,8 @@ console.log('tw: ' + Tweet.validate(tweet1));
 
 // feed.addAll(tweets);
 // console.log(feed);
+
+// feed.add('Я не сдамся!')
 
 // console.log(
 //   feed.getPage(0, 6, {
