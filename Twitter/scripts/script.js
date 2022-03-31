@@ -68,11 +68,88 @@ class TweetFeedView {
       txt.innerText = text;
     }
   }
+
+  removeTweet(id) {
+    const obj = this.get(id);
+    const tw = document.getElementById(`remove-${id}`);
+    this.tweets.splice(obj, 1);
+    this.id.removeChild(tw);
+  }
+
+  getFeed(skip = 0, top = 10, filterConfig = null) {
+    function sortTweets(skp, tp, twts) {
+      return twts
+        .slice()
+        .sort((a, b) => b.createdAt - a.createdAt)
+        .slice(skp, skp + tp);
+    }
+
+    function showTweets(param) {
+      newArr.forEach((val) => {
+        return this.id.insertAdjacentHTML(
+          'afterbegin',
+          showTweet(val.id, val.text, val.createdAt, val.author)
+        );
+      });
+      return newArr;
+    }
+
+    this.id.innerHTML = '';
+    if (filterConfig == null) {
+      const arr = sortTweets(skip, top, this.tweets);
+      arr.forEach((val) => {
+        return this.id.insertAdjacentHTML(
+          'afterbegin',
+          showTweet(val.id, val.text, val.createdAt, val.author)
+        );
+      });
+      return arr;
+    }
+    let filteredTweets = this.tweets.slice();
+
+    Object.keys(filterConfig).forEach((key) => {
+      if (key === 'author') {
+        filteredTweets = filteredTweets.filter((tweet) =>
+          tweet.author.toLowerCase().includes(filterConfig[key].toLowerCase())
+        );
+      }
+      if (key === 'text') {
+        filteredTweets = filteredTweets.filter((tweet) =>
+          tweet.text.toLowerCase().includes(filterConfig[key].toLowerCase())
+        );
+        console.log(filteredTweets);
+      }
+      if (key === 'dateFrom') {
+        filteredTweets = filteredTweets.filter(
+          (tweet) => tweet.createdAt >= filterConfig[key]
+        );
+      }
+      if (key === 'dateTo') {
+        filteredTweets = filteredTweets.filter(
+          (tweet) => tweet.createdAt >= filterConfig[key]
+        );
+      }
+      if (key === 'hashtags') {
+        filteredTweets = filteredTweets.filter((tweet) =>
+          tweet.text.toLowerCase().includes(filterConfig[key].toLowerCase())
+        );
+      }
+    });
+
+    const newArr = sortTweets(skip, top, filteredTweets);
+    newArr.forEach((val) => {
+      return this.id.insertAdjacentHTML(
+        'afterbegin',
+        showTweet(val.id, val.text, val.createdAt, val.author)
+      );
+    });
+    return newArr;
+  }
 }
 
 function showTweet(id, text, createdAt, author) {
   return `
-  <div class="message__content second content">
+  <div id="remove-${id}" class="message__content second content">
             <div class="content__name second secondary-text">${author}</div>
             <div class="content__container">
               <div class="content__area second">
@@ -100,3 +177,7 @@ console.log(tweetFeed);
 tweetFeed.addTweet('text');
 
 tweetFeed.editTweet('20', 'новый текст');
+
+tweetFeed.removeTweet('19');
+
+console.log(tweetFeed.getFeed(2, 6, { text: 'я' }));
