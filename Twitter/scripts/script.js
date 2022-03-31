@@ -84,16 +84,6 @@ class TweetFeedView {
         .slice(skp, skp + tp);
     }
 
-    function showTweets(param) {
-      newArr.forEach((val) => {
-        return this.id.insertAdjacentHTML(
-          'afterbegin',
-          showTweet(val.id, val.text, val.createdAt, val.author)
-        );
-      });
-      return newArr;
-    }
-
     this.id.innerHTML = '';
     if (filterConfig == null) {
       const arr = sortTweets(skip, top, this.tweets);
@@ -117,7 +107,6 @@ class TweetFeedView {
         filteredTweets = filteredTweets.filter((tweet) =>
           tweet.text.toLowerCase().includes(filterConfig[key].toLowerCase())
         );
-        console.log(filteredTweets);
       }
       if (key === 'dateFrom') {
         filteredTweets = filteredTweets.filter(
@@ -144,6 +133,13 @@ class TweetFeedView {
       );
     });
     return newArr;
+  }
+
+  showTweet(id){
+    this.id.innerHTML = '';
+    const obj = this.get(id);
+    return this.id.insertAdjacentHTML(
+        'afterbegin', showTweet(obj.id, obj.text, obj.createdAt, obj.author));
   }
 }
 
@@ -180,4 +176,6 @@ tweetFeed.editTweet('20', 'новый текст');
 
 tweetFeed.removeTweet('19');
 
-console.log(tweetFeed.getFeed(2, 6, { text: 'я' }));
+// console.log(tweetFeed.getFeed(2, 6, { text: '#' }));
+
+// tweetFeed.showTweet('19');
