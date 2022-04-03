@@ -62,8 +62,7 @@ export default class TweetFeed {
   }
 
   add(text) {
-    const idTw = String(Math.floor(Math.random() * (1000 - 25 + 1)) + 25);
-    const newTweet = new Tweet(idTw, text, new Date(), General._user,[]);
+    const newTweet = new Tweet(this.id, text);
     if (Tweet.validate(newTweet)) {
       this.tweets.push(newTweet);
       return true;
@@ -94,8 +93,7 @@ export default class TweetFeed {
 
   addComment(id, text) {
     const obj = this.get(id);
-    let comId = String(Math.floor(Math.random() * (10000 - 100 + 1)) + 100);
-    const newComment = new Comment(comId, text, new Date(), General._user);
+    const newComment = new Comment(this.id, text);
     if (Comment.validate(newComment)) {
       obj.comments.push(newComment);
       return true;
