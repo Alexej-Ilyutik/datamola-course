@@ -1,5 +1,25 @@
 import Tweet from './Tweet.js';
 import HeaderView from './HeaderView.js';
+import TweetFeed from './TweetFeed.js';
+import General from './General.js';
+
+function showTweet(id, text, createdAt, author) {
+  return `
+  <div id="remove-${id}" class="message__content second content">
+            <div class="content__name second secondary-text">${author}</div>
+            <div class="content__container">
+              <div class="content__area second">
+                <p id = "${id}" class="content__text">
+                  ${text}
+                </p>
+              </div>
+            </div>
+            <div class="content__info second">
+              <div class="secondary-text">${createdAt}</div>
+            </div>
+          </div>
+  `;
+}
 
 export default class TweetFeedView {
   constructor(tws) {
@@ -18,109 +38,119 @@ export default class TweetFeedView {
           val.comments
         );
         this.tweets.push(t);
-        return this.id.insertAdjacentHTML(
+        this.id.insertAdjacentHTML(
           'afterbegin',
           showTweet(t.id, t.text, t.createdAt, t.author)
         );
       }
+      return this.id;
     });
   }
 
-  addTweet(text) {
-    const idTw = String(Math.floor(Math.random() * (1000 - 25 + 1)) + 25);
-    const newTweet = new Tweet(idTw, text, new Date(), HeaderView.user, []);
+  addTw(text,feed) {
+    const newTweet = new Tweet(General.id, text);
     if (Tweet.validate(newTweet)) {
-      this.tweets.push(newTweet);
-      return this.id.insertAdjacentHTML(
-        'afterbegin',
-        showTweet(
-          newTweet.id,
-          newTweet.text,
-          newTweet.createdAt,
-          newTweet.author
-        )
-      );
-    }
+      feed.push(newTweet);
+    } 
+    return this.id.insertAdjacentHTML(
+      'afterbegin',
+      showTweet(newTweet.id, newTweet.text, newTweet.createdAt, newTweet.author)
+    );
   }
 
-  get(id) {
-    return this.tweets.find((el) => el.id === id);
-  }
+  //   addTw(el) {
+  //     // const idTw = String(Math.floor(Math.random() * (1000 - 25 + 1)) + 25);
+  //     // const newTweet = new Tweet(this.id, text);
+  //     // if (Tweet.validate(newTweet)) {
+  //     //   this.tweets.push(newTweet);
+  //     // }
+  //     // const newTweet = this.tweetsTweetFeed.add(text);
+  //     // newTweet.add(text);
+  // // console.log(newTweet);
+  //     return this.id.insertAdjacentHTML(
+  //       'afterbegin',
+  //       showTweet(el.id, el.text, el.createdAt, el.author)
+  //     );
+  //   }
 
-  editTweet(id, text) {
-    const obj = this.get(id);
-    const txt = document.getElementById(`${id}`);
-    if (Tweet.validate(obj)) {
-      obj.text = text;
-      txt.innerText = text;
-    }
-  }
+  // get(id) {
+  //   return this.tweets.find((el) => el.id === id);
+  // }
 
-  removeTweet(id) {
-    const obj = this.get(id);
-    const tw = document.getElementById(`remove-${id}`);
-    this.tweets.splice(obj, 1);
-    this.id.removeChild(tw);
-  }
+  // editTweet(id, text) {
+  //   const obj = this.get(id);
+  //   const txt = document.getElementById(`${id}`);
+  //   if (Tweet.validate(obj)) {
+  //     obj.text = text;
+  //     txt.innerText = text;
+  //   }
+  // }
 
-  getFeed(skip = 0, top = 10, filterConfig = null) {
-    function sortTweets(skp, tp, twts) {
-      return twts
-        .slice()
-        .sort((a, b) => b.createdAt - a.createdAt)
-        .slice(skp, skp + tp);
-    }
+  // removeTweet(id) {
+  //   const obj = this.get(id);
+  //   const tw = document.getElementById(`remove-${id}`);
+  //   this.tweets.splice(obj, 1);
+  //   this.id.removeChild(tw);
+  // }
 
-    this.id.innerHTML = '';
-    if (filterConfig == null) {
-      const arr = sortTweets(skip, top, this.tweets);
-      arr.forEach((val) => {
-        return this.id.insertAdjacentHTML(
-          'afterbegin',
-          showTweet(val.id, val.text, val.createdAt, val.author)
-        );
-      });
-      return arr;
-    }
-    let filteredTweets = this.tweets.slice();
+  // getFeed(skip = 0, top = 10, filterConfig = null) {
+  //   function sortTweets(skp, tp, twts) {
+  //     return twts
+  //       .slice()
+  //       .sort((a, b) => b.createdAt - a.createdAt)
+  //       .slice(skp, skp + tp);
+  //   }
 
-    Object.keys(filterConfig).forEach((key) => {
-      if (key === 'author') {
-        filteredTweets = filteredTweets.filter((tweet) =>
-          tweet.author.toLowerCase().includes(filterConfig[key].toLowerCase())
-        );
-      }
-      if (key === 'text') {
-        filteredTweets = filteredTweets.filter((tweet) =>
-          tweet.text.toLowerCase().includes(filterConfig[key].toLowerCase())
-        );
-      }
-      if (key === 'dateFrom') {
-        filteredTweets = filteredTweets.filter(
-          (tweet) => tweet.createdAt >= filterConfig[key]
-        );
-      }
-      if (key === 'dateTo') {
-        filteredTweets = filteredTweets.filter(
-          (tweet) => tweet.createdAt >= filterConfig[key]
-        );
-      }
-      if (key === 'hashtags') {
-        filteredTweets = filteredTweets.filter((tweet) =>
-          tweet.text.toLowerCase().includes(filterConfig[key].toLowerCase())
-        );
-      }
-    });
+  //   this.id.innerHTML = '';
+  //   if (filterConfig == null) {
+  //     const arr = sortTweets(skip, top, this.tweets);
+  //     arr.forEach((val) => {
+  //       return this.id.insertAdjacentHTML(
+  //         'afterbegin',
+  //         showTweet(val.id, val.text, val.createdAt, val.author)
+  //       );
+  //     });
+  //     return arr;
+  //   }
+  //   let filteredTweets = this.tweets.slice();
 
-    const newArr = sortTweets(skip, top, filteredTweets);
-    newArr.forEach((val) => {
-      return this.id.insertAdjacentHTML(
-        'afterbegin',
-        showTweet(val.id, val.text, val.createdAt, val.author)
-      );
-    });
-    return newArr;
-  }
+  //   Object.keys(filterConfig).forEach((key) => {
+  //     if (key === 'author') {
+  //       filteredTweets = filteredTweets.filter((tweet) =>
+  //         tweet.author.toLowerCase().includes(filterConfig[key].toLowerCase())
+  //       );
+  //     }
+  //     if (key === 'text') {
+  //       filteredTweets = filteredTweets.filter((tweet) =>
+  //         tweet.text.toLowerCase().includes(filterConfig[key].toLowerCase())
+  //       );
+  //     }
+  //     if (key === 'dateFrom') {
+  //       filteredTweets = filteredTweets.filter(
+  //         (tweet) => tweet.createdAt >= filterConfig[key]
+  //       );
+  //     }
+  //     if (key === 'dateTo') {
+  //       filteredTweets = filteredTweets.filter(
+  //         (tweet) => tweet.createdAt >= filterConfig[key]
+  //       );
+  //     }
+  //     if (key === 'hashtags') {
+  //       filteredTweets = filteredTweets.filter((tweet) =>
+  //         tweet.text.toLowerCase().includes(filterConfig[key].toLowerCase())
+  //       );
+  //     }
+  //   });
+
+  //   const newArr = sortTweets(skip, top, filteredTweets);
+  //   newArr.forEach((val) => {
+  //     return this.id.insertAdjacentHTML(
+  //       'afterbegin',
+  //       showTweet(val.id, val.text, val.createdAt, val.author)
+  //     );
+  //   });
+  //   return newArr;
+  // }
 
   showTweet(id) {
     this.id.innerHTML = '';
@@ -130,22 +160,4 @@ export default class TweetFeedView {
       showTweet(obj.id, obj.text, obj.createdAt, obj.author)
     );
   }
-}
-
-function showTweet(id, text, createdAt, author) {
-  return `
-  <div id="remove-${id}" class="message__content second content">
-            <div class="content__name second secondary-text">${author}</div>
-            <div class="content__container">
-              <div class="content__area second">
-                <p id = "${id}" class="content__text">
-                  ${text}
-                </p>
-              </div>
-            </div>
-            <div class="content__info second">
-              <div class="secondary-text">${createdAt}</div>
-            </div>
-          </div>
-  `;
 }
