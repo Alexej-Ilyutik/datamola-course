@@ -24,9 +24,13 @@ function addTweet(txt) {
   tweetFeed.addTw(txt, feed.tweets);
 }
 
+function editTweet(id, text){
+}
+
 setCurrentUser('alex');
 getTweetFeed(tweets);
 addTweet('Я не сдамся!');
+editTweet(2, 'new text');
 
 // tweetFeed.addTweet('text');
 

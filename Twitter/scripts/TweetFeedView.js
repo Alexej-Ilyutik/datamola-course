@@ -1,6 +1,4 @@
 import Tweet from './Tweet.js';
-import HeaderView from './HeaderView.js';
-import TweetFeed from './TweetFeed.js';
 import General from './General.js';
 
 function showTweet(id, text, createdAt, author) {
@@ -57,21 +55,6 @@ export default class TweetFeedView {
       showTweet(newTweet.id, newTweet.text, newTweet.createdAt, newTweet.author)
     );
   }
-
-  //   addTw(el) {
-  //     // const idTw = String(Math.floor(Math.random() * (1000 - 25 + 1)) + 25);
-  //     // const newTweet = new Tweet(this.id, text);
-  //     // if (Tweet.validate(newTweet)) {
-  //     //   this.tweets.push(newTweet);
-  //     // }
-  //     // const newTweet = this.tweetsTweetFeed.add(text);
-  //     // newTweet.add(text);
-  // // console.log(newTweet);
-  //     return this.id.insertAdjacentHTML(
-  //       'afterbegin',
-  //       showTweet(el.id, el.text, el.createdAt, el.author)
-  //     );
-  //   }
 
   // get(id) {
   //   return this.tweets.find((el) => el.id === id);
