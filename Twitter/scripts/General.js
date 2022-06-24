@@ -1,14 +1,14 @@
 export default class General {
-
   static maxTextLength = 280;
 
   static _user = 'Tony Stark';
 
   constructor(id, text, createdAt, author) {
-    this._id = id;
+    const newId = String(Math.floor(Math.random() * (10000 - 100 + 1)) + 100);
+    this._id = id||newId;
     this.text = text;
-    this._createdAt = new Date(createdAt);
-    this._author = author;
+    this._createdAt = createdAt ? new Date(createdAt) : new Date();
+    this._author = author || General._user;
   }
 
   set id(id) {

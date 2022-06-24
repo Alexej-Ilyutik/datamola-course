@@ -4,8 +4,124 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JS Deep Dive and Best Practices</title>
+    <title>Dom, Bom</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="assets/svg/Logo.svg" />
   </head>
-  <body></body>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <figure class="logo">
+          <img src="assets/img/ava.jfif" alt="foto" />
+          <figcaption id="user"></figcaption>
+        </figure>
+        <div class="header__button">
+          <button class="header__btn btn">
+            <img src="assets/svg/Exit.svg" alt="exit" />
+          </button>
+          <div class="header__button-description">Exit</div>
+        </div>
+      </header>
+      <main class="main">
+        <aside class="tools">
+          <button class="tools__btn btn">
+            <img src="assets/svg/New_twitt.svg" alt="new twitt" />
+          </button>
+          <form action="#popup">
+            <button class="tools__btn btn">
+              <img src="assets/svg/Search.svg" alt="search" />
+            </button>
+          </form>
+
+          <button class="tools__btn btn">
+            <img src="assets/svg/Contacts.svg" alt="contacts" />
+          </button>
+          <button class="tools__btn btn">
+            <img src="assets/svg/Settings.svg" alt="settings" />
+          </button>
+        </aside>
+        <article id="tweetfeed" class="message">
+          <button class="message__btn btn">Show more...</button>
+          <div class="tools__popup" id="popup">
+            <a href="#" class="popup__area"></a>
+            <div class="popup__body">
+              <div class="popup__content">
+                <a href="#" class="popup__close">&times;</a>
+                <div class="popup__title">Filter:</div>
+                <form class="popup__choice choice" action="#">
+                  <div class="choice__name name box">
+                    <label class="name__label" for="name_id">by Name:</label>
+                    <input
+                      class="name__text"
+                      type="text"
+                      id="name_id"
+                      name="name_value"
+                      placeholder="input author name.."
+                    />
+                  </div>
+                  <div class="choice__date date box">
+                    <label class="date__label" for="date_id">by Date:</label>
+                    <input
+                      class="date__text"
+                      type="date"
+                      id="date_id"
+                      name="date_value"
+                    />
+                  </div>
+                  <div class="choice__content content box">
+                    <label class="content__label" for="content_id"
+                      >by Content:</label
+                    >
+                    <input
+                      class="content__value"
+                      type="text"
+                      id="content_id"
+                      name="content_value"
+                      placeholder="input text..."
+                    />
+                  </div>
+                  <div class="choice__hesh hesh box">
+                    <label class="hesh__label" for="hesh_id">by Hashtag:</label>
+                    <input
+                      class="hesh__text"
+                      type="text"
+                      id="hesh_id"
+                      name="hesh_value"
+                      placeholder="input heshtag..."
+                    />
+                  </div>
+                  <div class="choice__btns">
+                    <button class="choice__button btn">Apply</button>
+                    <button type="reset" class="choice__button btn">
+                      Reset
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </article>
+        <div class="message__line"></div>
+      </main>
+      <footer class="footer">
+        <figure class="logo">
+          <img class="logo__cat" src="assets/svg/Logo_img.svg" alt="logo" />
+          <figcaption>CatChat</figcaption>
+        </figure>
+        <div class="footer__author">
+          <p>Alexej Ilyutik</p>
+          <p>alexej.ilyutik@gmail.com</p>
+        </div>
+        <div class="footer__date">
+          <div class="date-text">Date:</div>
+          <div class="date-date">28.02.2022</div>
+        </div>
+      </footer>
+    </div>
+  </body>
   <script type="module" src="./scripts/script.js"></script>
 </html>

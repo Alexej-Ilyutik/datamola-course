@@ -3,56 +3,41 @@ import Comment from './Comment.js';
 import TweetFeed from './TweetFeed.js';
 import tweets from './tweets.js';
 import General from './General.js';
+import HeaderView from './HeaderView.js';
+import TweetFeedView from './TweetFeedView.js';
 
-const tweet1 = new Tweet('5', 'Привет', '05.05.2022', "I'm");
-const tweet2 = new Tweet('4','Хай', '05.05.2022', "I'm");
+const user = new HeaderView();
+const tweetFeed = new TweetFeedView();
+const feed = new TweetFeed();
 
+function setCurrentUser(newUser) {
+  General._user = newUser;
+  return user.display(newUser);
+}
 
-console.log(tweet1);
-console.log(tweet2);
+function getTweetFeed(tw) {
+  tweetFeed.display(tw);
+  feed.addAll(tw);
+}
 
+function addTweet(txt) {
+  tweetFeed.addTw(txt, feed.tweets);
+}
 
-tweet1.author = '  AlExEj        ';
-console.log(tweet1);
-console.log('tw: ' + Tweet.validate(tweet1));
+function editTweet(id, text){
+}
 
-const comment1 = new Comment('15', 'привет мир',  '03.16.2022', 'Venom');
-console.log(comment1);
-// console.log('com: ' + Comment.validate(comment1));
+setCurrentUser('alex');
+getTweetFeed(tweets);
+addTweet('Я не сдамся!');
+editTweet(2, 'new text');
 
-// tweets.push(comment1);
-// console.log(tweets);
+// tweetFeed.addTweet('text');
 
-// const feed = new TweetFeed();
-// console.log(feed);
+// tweetFeed.editTweet('20', 'новый текст');
 
-// feed.addAll(tweets);
-// console.log(feed);
+// tweetFeed.removeTweet('19');
 
-// feed.add('Я не сдамся!')
+// console.log(tweetFeed.getFeed(2, 6, { text: '#' }));
 
-// console.log(
-//   feed.getPage(0, 6, {
-//     text: 'Я',
-//   })
-// );
-
-// console.log(feed.getPage(2, 5));
-
-// console.log(feed.get('8'));
-
-// console.log(feed.add('Yeeeees'));
-// console.log(feed);
-
-// console.log(feed.edit('1', 'new text'));
-// console.log(feed);
-
-// console.log(feed.remove('1'));
-// console.log(feed);
-
-// feed.addComment('2', 'hahaha');
-// feed.addComment('2', 'hehehe');
-// console.log(feed);
-
-// feed.clear();
-// console.log(feed);
+// tweetFeed.showTweet('19');
