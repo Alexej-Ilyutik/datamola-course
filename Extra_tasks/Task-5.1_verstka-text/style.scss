@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'HelveticaMedium';
+  src: url(./fonts/HelveticaNeueCyr-Medium.otf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'HelveticaBold';
+  src: url(./fonts/HelveticaNeueCyr-Bold.otf);
+  font-weight: bold;
+}
+
+:root {
+  --text-color: #333333;
+  --link-color: rgb(27, 27, 27);
+  --red-color: rgba(0, 0, 0, 0.25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'HelveticaMedium', sans-serif;
+  font-size: 14px;
+  scroll-behavior: smooth;
+  color: var(--text-color);
+}
+
+.wrapper {
+  padding: 6rem 5.5rem;
+  h1 {
+    font-size: 30px;
+    margin-bottom: 2rem;
+  }
+}
+
+.block,
+.block__subtittle {
+  margin-bottom: 2rem;
+}
+
+.block__subtittle {
+  font-size: 24px;
+}
+
+.block__content {
+  font-size: 20px;
+}
